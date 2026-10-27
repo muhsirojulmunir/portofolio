@@ -1508,39 +1508,170 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 /* ══════════════════════════════════════════════════════════════════
-   RESPONSIVE
+   RESPONSIVE (Mobile & Tablet Optimization)
    ══════════════════════════════════════════════════════════════════ */
 @media (max-width: 900px) {
   .hero-inner {
     grid-template-columns: 1fr;
     text-align: center;
     justify-items: center;
+    gap: 40px;
+    padding: 40px 20px;
   }
-  .hero-photo-wrap { order: -1; width: min(260px, 70vw); }
-  .hero-actions, .hero-socials { justify-content: center; }
-  .hero-desc { margin: 0 auto 36px; }
+  .hero-photo-wrap {
+    order: -1;
+    width: min(320px, 82vw);
+    margin: 0 auto;
+  }
+  .hero-desc {
+    margin: 0 auto 28px;
+  }
+  .hero-actions, .hero-socials, .hero-stats {
+    justify-content: center;
+  }
   .timeline::before { left: 16px; }
-  .timeline-item { padding-left: 52px; }
-  .timeline-dot { left: 10px; }
+  .timeline-item { padding-left: 48px; }
+  .timeline-dot { left: 9px; }
 }
 
 @media (max-width: 640px) {
-  :root { --section-pad: 64px; }
+  :root {
+    --section-pad: 54px;
+    --nav-h: 64px;
+  }
+  
+  .container {
+    padding: 0 18px;
+  }
+
+  /* Navigation drawer */
   .nav-links {
     display: none;
     position: fixed;
     inset: var(--nav-h) 0 0;
-    background: rgba(255,255,255,.96);
-    backdrop-filter: blur(24px);
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(28px);
+    -webkit-backdrop-filter: blur(28px);
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: 16px;
+    z-index: 99;
   }
   .nav-links.open { display: flex; }
-  .nav-link { font-size: 1.1rem; padding: 14px 32px; }
+  .nav-link { font-size: 1.15rem; font-weight: 600; padding: 12px 28px; border-radius: 12px; }
   .nav-hamburger { display: flex; }
-  .hero-title { font-size: clamp(2rem, 10vw, 2.8rem); }
-  .skill-categories, .projects-grid { grid-template-columns: 1fr; }
-  .footer-inner { flex-direction: column; text-align: center; }
+
+  /* Hero Section */
+  .hero {
+    min-height: auto;
+    padding-top: calc(var(--nav-h) + 16px);
+    padding-bottom: 50px;
+  }
+  .hero-photo-wrap {
+    width: min(290px, 86vw);
+  }
+  .card-photo-container {
+    height: 280px;
+  }
+  .hero-title {
+    font-size: clamp(2rem, 8.5vw, 2.6rem);
+    line-height: 1.15;
+  }
+  .hero-role {
+    font-size: 1.05rem;
+  }
+  .hero-desc {
+    font-size: 0.92rem;
+    line-height: 1.65;
+  }
+
+  /* Hero buttons */
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 13px 20px;
+    font-size: 0.92rem;
+  }
+
+  /* Hero stats */
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+  .hero-stat-card {
+    padding: 10px 8px;
+    text-align: center;
+  }
+  .hero-stat-number {
+    font-size: 1.2rem;
+  }
+  .hero-stat-label {
+    font-size: 0.62rem;
+    line-height: 1.25;
+  }
+
+  /* Skills & Projects Grid */
+  .skill-categories, .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .skill-cat-card, .project-card, .soft-skills-wrap, .timeline-card {
+    padding: 20px;
+    border-radius: 16px;
+  }
+  .soft-skills-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .soft-skills-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 32px 0;
+  }
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+  .footer-left {
+    align-items: center;
+  }
+  .footer-right {
+    align-items: center;
+  }
+  .footer-contact-items {
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+  }
+  .footer-contact-badge {
+    width: 100%;
+    justify-content: center;
+  }
+  .footer-social-links {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero-stats {
+    grid-template-columns: 1fr;
+  }
+  .hero-stat-card {
+    padding: 8px 12px;
+  }
 }
