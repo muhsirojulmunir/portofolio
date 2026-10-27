@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio M.Sirojul Munir — Web Developer, Content Creator & Digital Marketing Specialist. Berpengalaman di Laravel, React, Flutter, dan workflow automation." />
+  <meta name="keywords" content="web developer, frontend developer, laravel, react, flutter, content creator, portfolio, M.Sirojul Munir" />
+  <meta name="author" content="M.Sirojul Munir" />
+  <title>M.Sirojul Munir — Web Developer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Top Reading / Scroll Progress Bar -->
+  <div class="scroll-progress-bar" id="scroll-progress-bar" aria-hidden="true"></div>
+
+  <!-- ═══════════════════════════ NAVBAR ═══════════════════════════ -->
+  <header class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo" id="nav-logo">
+        <span class="logo-bracket">&lt;</span>Sirojul<span class="logo-bracket">/&gt;</span>
+      </a>
+      <nav class="nav-links" id="nav-links" aria-label="Navigasi utama">
+        <a href="#skills"     class="nav-link" id="nav-skills">Skills</a>
+        <a href="#projects"   class="nav-link" id="nav-projects">Proyek</a>
+        <a href="#experience" class="nav-link" id="nav-experience">Pengalaman</a>
+      </nav>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Buka menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════ HERO ═══════════════════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="orb orb--1"></div>
+      <div class="orb orb--2"></div>
+      <div class="orb orb--3"></div>
+      <div class="grid-lines"></div>
+    </div>
+
+    <div class="hero-inner">
+      <div class="hero-text" id="hero-text">
+        <h1 class="hero-title" id="hero-title">
+          Halo, Saya <br />
+          <span class="hero-name" id="hero-name">M.Sirojul Munir</span>
+        </h1>
+        <p class="hero-role" id="hero-role">
+          <span class="typed-text" id="typed-text"></span><span class="cursor" id="cursor">|</span>
+        </p>
+        <p class="hero-desc" id="hero-desc">
+          Dengan latar belakang di video editing, animasi 2D/3D, dan pengembangan konten visual, 
+          saya kini fokus membangun aplikasi web dan mobile modern menggunakan Laravel, React, dan Flutter — 
+          serta mengotomatisasi workflow bisnis dengan teknologi terkini.
+        </p>
+        <div class="hero-actions" id="hero-actions">
+          <a href="#projects" class="btn btn--primary" id="btn-see-projects">
+            <span>Lihat Proyek</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z" clip-rule="evenodd" /></svg>
+          </a>
+          <a href="https://wa.me/6285706013038" target="_blank" rel="noopener noreferrer" class="btn btn--ghost" id="btn-contact-hero">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            <span>Hubungi Saya</span>
+          </a>
+        </div>
+        <!-- Hero Quick Stats / Metrics -->
+        <div class="hero-stats" id="hero-stats">
+          <div class="hero-stat-card">
+            <span class="hero-stat-number">7+</span>
+            <span class="hero-stat-label">Tahun Pengalaman Kerja</span>
+          </div>
+          <div class="hero-stat-card">
+            <span class="hero-stat-number">6+</span>
+            <span class="hero-stat-label">Proyek &amp; Sistem Selesai</span>
+          </div>
+          <div class="hero-stat-card">
+            <span class="hero-stat-number">3+</span>
+            <span class="hero-stat-label">Industri F&B, E-Commerce, IT</span>
+          </div>
+        </div>
+
+        <div class="hero-socials" id="hero-socials">
+          <a href="https://github.com/muhsirojulmunir" target="_blank" rel="noopener noreferrer" class="social-link" id="social-github" aria-label="GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2Z"/></svg>
+          </a>
+          <a href="https://instagram.com/muhsairojulmunir" target="_blank" rel="noopener noreferrer" class="social-link" id="social-instagram" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069ZM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0Zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324ZM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8Zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881Z"/></svg>
+          </a>
+          <a href="mailto:munirxanm40@gmail.com" class="social-link" id="social-email" aria-label="Email">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z"/><path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-photo-wrap" id="hero-photo-wrap">
+        <!-- Modern Tech Glass Card Frame -->
+        <div class="tech-profile-card" id="tech-profile-card">
+          <!-- Ambient Glow Backdrop -->
+          <div class="card-ambient-glow" aria-hidden="true"></div>
+
+          <!-- Card Header Bar -->
+          <div class="card-glass-header" aria-hidden="true">
+            <div class="card-traffic-lights">
+              <span class="t-dot dot-red"></span>
+              <span class="t-dot dot-yellow"></span>
+              <span class="t-dot dot-green"></span>
+            </div>
+            <span class="card-code-tag">developer.profile</span>
+          </div>
+
+          <!-- Photo Container -->
+          <div class="card-photo-container">
+            <div class="card-photo-backdrop" aria-hidden="true"></div>
+            <img
+              src="assets/munir.png"
+              alt="Foto profil profesional M.Sirojul Munir"
+              class="hero-photo"
+              id="hero-photo"
+            />
+          </div>
+
+          <!-- Card Footer Details -->
+          <div class="card-glass-footer">
+            <div class="footer-profile-info">
+              <h3 class="footer-name">M. Sirojul Munir</h3>
+            </div>
+            <div class="footer-tech-stack">
+              <span>Laravel</span>
+              <span>React</span>
+              <span>Flutter</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating Interactive Emoticon Badges -->
+        <div class="tech-badge tech-badge--top" id="tb-code" title="Web & Mobile Developer">
+          <span class="emoji-icon">💻</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator" id="scroll-indicator" aria-hidden="true">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ SKILLS ═══════════════════════════ -->
+  <section class="section skills-section" id="skills">
+    <div class="container">
+      <div class="section-header reveal" id="skills-header">
+        <span class="section-label">Kemampuan</span>
+        <h2 class="section-title">Skills <span class="accent">&</span> Tools</h2>
+        <p class="section-desc">Teknologi dan alat yang saya kuasai dari pengalaman kerja nyata di berbagai industri.</p>
+      </div>
+
+      <div class="skill-categories" id="skill-categories">
+
+        <!-- Web Development -->
+        <div class="skill-cat-card reveal" id="skillcat-web">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M14.447 3.026a.75.75 0 0 1 .527.921l-4.5 16.5a.75.75 0 0 1-1.448-.394l4.5-16.5a.75.75 0 0 1 .921-.527ZM16.72 6.22a.75.75 0 0 1 1.06 0l5.25 5.25a.75.75 0 0 1 0 1.06l-5.25 5.25a.75.75 0 1 1-1.06-1.06L21.44 12l-4.72-4.72a.75.75 0 0 1 0-1.06Zm-9.44 0a.75.75 0 0 1 0 1.06L2.56 12l4.72 4.72a.75.75 0 1 1-1.06 1.06L.97 12.53a.75.75 0 0 1 0-1.06l5.25-5.25a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd"/></svg>
+            </div>
+            <h3 class="skill-cat-name">Web Development</h3>
+          </div>
+          <div class="skill-tag-grid">
+            <span class="skill-tag skill-tag--primary" id="st-laravel">Laravel</span>
+            <span class="skill-tag skill-tag--primary" id="st-php">PHP</span>
+            <span class="skill-tag skill-tag--primary" id="st-react">React</span>
+            <span class="skill-tag skill-tag--primary" id="st-react">Tailwinds CSS</span>
+            <span class="skill-tag" id="st-restapi">REST API</span>
+            <span class="skill-tag" id="st-html">HTML</span>
+            <span class="skill-tag" id="st-css">CSS</span>
+            <span class="skill-tag" id="st-js">JavaScript</span>
+            <span class="skill-tag" id="st-bootstrap">Bootstrap</span>
+          </div>
+        </div>
+
+        <!-- Mobile & App -->
+        <div class="skill-cat-card reveal" id="skillcat-mobile">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M10.5 18.75a.75.75 0 0 0 0 1.5h3a.75.75 0 0 0 0-1.5h-3Z"/><path fill-rule="evenodd" d="M8.625.75A3.375 3.375 0 0 0 5.25 4.125v15.75a3.375 3.375 0 0 0 3.375 3.375h6.75a3.375 3.375 0 0 0 3.375-3.375V4.125A3.375 3.375 0 0 0 15.375.75h-6.75ZM7.5 4.125C7.5 3.504 8.004 3 8.625 3H9.75v.375c0 .621.504 1.125 1.125 1.125h2.25c.621 0 1.125-.504 1.125-1.125V3h1.125c.621 0 1.125.504 1.125 1.125v15.75c0 .621-.504 1.125-1.125 1.125h-6.75A1.125 1.125 0 0 1 7.5 19.875V4.125Z" clip-rule="evenodd"/></svg>
+            </div>
+            <h3 class="skill-cat-name">Mobile Development</h3>
+          </div>
+          <div class="skill-tag-grid">
+            <span class="skill-tag skill-tag--primary" id="st-flutter">Flutter</span>
+            <span class="skill-tag skill-tag--primary" id="st-dart">Dart</span>
+            <span class="skill-tag skill-tag--primary" id="st-mob-restapi">REST API</span>
+            <span class="skill-tag" id="st-mob-googleai">Google AI Studio</span>
+            <span class="skill-tag" id="st-admindash">Admin Dashboard</span>
+          </div>
+        </div>
+
+        <!-- Automation & AI -->
+        <div class="skill-cat-card reveal" id="skillcat-auto">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M14.615 1.595a.75.75 0 0 1 .359.852L12.982 9.75h7.268a.75.75 0 0 1 .548 1.262l-10.5 11.25a.75.75 0 0 1-1.272-.71l1.992-7.302H3.75a.75.75 0 0 1-.548-1.262l10.5-11.25a.75.75 0 0 1 .913-.143Z" clip-rule="evenodd"/></svg>
+            </div>
+            <h3 class="skill-cat-name">Automation & AI</h3>
+          </div>
+          <div class="skill-tag-grid">
+            <span class="skill-tag skill-tag--primary" id="st-n8n">n8n</span>
+            <span class="skill-tag skill-tag--primary" id="st-whatsapp">WhatsApp API</span>
+            <span class="skill-tag" id="st-airtable">Airtable / Goggle Sheets</span>
+            <span class="skill-tag" id="st-metaads">Meta Ads</span>
+            <span class="skill-tag" id="st-gemini">Google AI Studio</span>
+            <span class="skill-tag" id="st-claude">Claude AI</span>
+          </div>
+        </div>
+
+        <!-- Design & Content (Tengah Bawah) -->
+        <div class="skill-cat-card skill-cat-card--center reveal" id="skillcat-design">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M20.599 1.5c-.376 0-.743.111-1.055.32l-5.08 3.385a18.747 18.747 0 0 0-3.471 2.987 10.04 10.04 0 0 1 4.815 4.815 18.748 18.748 0 0 0 2.987-3.472l3.386-5.079A1.902 1.902 0 0 0 20.599 1.5Zm-8.3 14.025a18.76 18.76 0 0 0 1.896-1.207 8.026 8.026 0 0 0-4.513-4.513A18.75 18.75 0 0 0 8.475 11.7l-.278.5a5.26 5.26 0 0 1 3.601 3.602l.502-.278ZM6.75 13.5A3.75 3.75 0 0 0 3 17.25a1.5 1.5 0 0 1-1.601 1.497.75.75 0 0 0-.7 1.143 5.25 5.25 0 0 0 9.8-2.62 3.75 3.75 0 0 0-3.75-3.75Z" clip-rule="evenodd"/></svg>
+            </div>
+            <h3 class="skill-cat-name">Design &amp; Content</h3>
+          </div>
+          <div class="skill-tag-grid">
+            <span class="skill-tag skill-tag--primary" id="st-capcut">CapCut</span>
+            <span class="skill-tag skill-tag--primary" id="st-canva">Canva</span>
+            <span class="skill-tag" id="st-ai">Adobe Illustrator</span>
+            <span class="skill-tag" id="st-copywriting">Copywriting</span>
+            <span class="skill-tag" id="st-digmark">Digital Marketing</span>
+            <span class="skill-tag" id="st-ecom">E-Commerce</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Soft Skills with Percentage -->
+      <div class="soft-skills-wrap reveal" id="soft-skills-wrap">
+        <div class="soft-skills-header">
+          <h3 class="soft-skills-title">Soft Skills &amp; Kompetensi Interpersonal</h3>
+          <span class="soft-skills-badge">Evaluasi Profesional</span>
+        </div>
+        <div class="soft-skills-grid" id="soft-skills-grid">
+          <div class="soft-skill-item" id="ss-team">
+            <div class="soft-skill-top">
+              <div class="soft-skill-label">
+                <span class="soft-skill-icon">👥</span>
+                <span class="soft-skill-name">Kerja Tim</span>
+              </div>
+              <span class="soft-skill-pct">95%</span>
+            </div>
+            <div class="soft-skill-bar-bg">
+              <div class="soft-skill-bar-fill" style="width: 95%;"></div>
+            </div>
+          </div>
+
+          <div class="soft-skill-item" id="ss-hard">
+            <div class="soft-skill-top">
+              <div class="soft-skill-label">
+                <span class="soft-skill-icon">💪</span>
+                <span class="soft-skill-name">Pekerja Keras</span>
+              </div>
+              <span class="soft-skill-pct">96%</span>
+            </div>
+            <div class="soft-skill-bar-bg">
+              <div class="soft-skill-bar-fill" style="width: 96%;"></div>
+            </div>
+          </div>
+
+          <div class="soft-skill-item" id="ss-quick">
+            <div class="soft-skill-top">
+              <div class="soft-skill-label">
+                <span class="soft-skill-icon">⚡</span>
+                <span class="soft-skill-name">Cekatan &amp; Adaptif</span>
+              </div>
+              <span class="soft-skill-pct">94%</span>
+            </div>
+            <div class="soft-skill-bar-bg">
+              <div class="soft-skill-bar-fill" style="width: 94%;"></div>
+            </div>
+          </div>
+
+          <div class="soft-skill-item" id="ss-responsibility">
+            <div class="soft-skill-top">
+              <div class="soft-skill-label">
+                <span class="soft-skill-icon">✅</span>
+                <span class="soft-skill-name">Bertanggung Jawab</span>
+              </div>
+              <span class="soft-skill-pct">98%</span>
+            </div>
+            <div class="soft-skill-bar-bg">
+              <div class="soft-skill-bar-fill" style="width: 98%;"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ PROJECTS ═══════════════════════════ -->
+  <section class="section projects-section" id="projects">
+    <div class="container">
+      <div class="section-header reveal" id="projects-header">
+        <span class="section-label">Portofolio</span>
+        <h2 class="section-title">Proyek <span class="accent">Terbaik</span></h2>
+        <p class="section-desc">Proyek nyata yang pernah saya bangun dan kerjakan secara profesional.</p>
+      </div>
+
+      <div class="projects-grid" id="projects-grid">
+
+        <!-- Project 1: CAFEIN App -->
+        <article class="project-card reveal" id="project-1">
+          <div class="project-card-inner">
+            <div class="project-top">
+              <div class="project-tags">
+                <span class="project-tag">Flutter</span>
+                <span class="project-tag">Dart</span>
+                <span class="project-tag">Laravel</span>
+                <span class="project-tag">Google AI</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/muhsirojulmunir/frontend_cafein" target="_blank" rel="noopener noreferrer" class="project-link" id="project-1-github" aria-label="Repository GitHub CAFEIN" title="GitHub Repository CAFEIN">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2Z"/></svg>
+                </a>
+                <a href="https://drive.google.com/drive/folders/1oeE0Mqyw1pBl_F5Hma0hWHtJcHOesT1c?usp=drive_link" target="_blank" rel="noopener noreferrer" class="project-link" id="project-1-demo" aria-label="Demo live aplikasi CAFEIN" title="Lihat Aplikasi CAFEIN">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M15.75 2.25H21a.75.75 0 0 1 .75.75v5.25a.75.75 0 0 1-1.5 0V4.81L8.03 17.03a.75.75 0 0 1-1.06-1.06L19.19 3.75h-3.44a.75.75 0 0 1 0-1.5Zm-10.5 4.5a1.5 1.5 0 0 0-1.5 1.5v10.5a1.5 1.5 0 0 0 1.5 1.5h10.5a1.5 1.5 0 0 0 1.5-1.5V10.5a.75.75 0 0 1 1.5 0v8.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V8.25a3 3 0 0 1 3-3h8.25a.75.75 0 0 1 0 1.5H5.25Z" clip-rule="evenodd"/></svg>
+                </a>
+              </div>
+            </div>
+            <div class="project-visual" id="project-1-visual">
+              <div class="project-browser-frame">
+                <div class="browser-bar" aria-hidden="true">
+                  <span class="browser-dot dot-red"></span>
+                  <span class="browser-dot dot-yellow"></span>
+                  <span class="browser-dot dot-green"></span>
+                  <span class="browser-url">cafein.inkindo-jatim.org</span>
+                </div>
+                <div class="project-img-wrap" id="project-1-imgwrap" title="Klik untuk memperbesar tampilan">
+                  <img
+                    src="assets/project-cafein.png"
+                    alt="Tampilan Aplikasi CAFEIN - INKINDO Jawa Timur"
+                    class="project-img"
+                    id="project-1-img"
+                    loading="lazy"
+                  />
+                  <div class="project-img-overlay">
+                    <span class="view-btn">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/><path fill-rule="evenodd" d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 0 1 0-1.113ZM17.25 12a5.25 5.25 0 1 1-10.5 0 5.25 5.25 0 0 1 10.5 0Z" clip-rule="evenodd"/></svg>
+                      Perbesar
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-client-tag" id="project-1-client">
+                <span>📍 INKINDO Jawa Timur — Tugas Akhir</span>
+              </div>
+              <h3 class="project-title" id="project-1-title">Aplikasi CAFEIN</h3>
+              <p class="project-desc" id="project-1-desc">
+                Aplikasi mobile berbasis Flutter & Dart sebagai media informasi dan diskusi untuk anggota INKINDO. Dilengkapi fitur Regulasi, Media, Diskusi, Podcast, dan Pelatihan. Admin Dashboard dibangun dengan Laravel, PHP & Bootstrap, serta integrasi Google AI Studio/Gemini untuk manajemen badge pengguna otomatis.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2: E-Commerce System -->
+        <article class="project-card reveal" id="project-2">
+          <div class="project-card-inner">
+            <div class="project-top">
+              <div class="project-tags">
+                <span class="project-tag">Laravel</span>
+                <span class="project-tag">React</span>
+                <span class="project-tag">REST API</span>
+                <span class="project-tag">E-Commerce</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/muhsirojulmunir/frontend-ecommerce-record" target="_blank" rel="noopener noreferrer" class="project-link" id="project-2-github" aria-label="Repository GitHub Record Shoes" title="GitHub Repository Record Shoes">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2Z"/></svg>
+                </a>
+                <a href="https://www.recordshoes.com" target="_blank" rel="noopener noreferrer" class="project-link" id="project-2-demo" aria-label="Demo live website Record Shoes" title="Buka Website Record Shoes">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M15.75 2.25H21a.75.75 0 0 1 .75v5.25a.75.75 0 0 1-1.5 0V4.81L8.03 17.03a.75.75 0 0 1-1.06-1.06L19.19 3.75h-3.44a.75.75 0 0 1 0-1.5Zm-10.5 4.5a1.5 1.5 0 0 0-1.5 1.5v10.5a1.5 1.5 0 0 0 1.5 1.5h10.5a1.5 1.5 0 0 0 1.5-1.5V10.5a.75.75 0 0 1 1.5 0v8.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V8.25a3 3 0 0 1 3-3h8.25a.75.75 0 0 1 0 1.5H5.25Z" clip-rule="evenodd"/></svg>
+                </a>
+              </div>
+            </div>
+            <div class="project-visual" id="project-2-visual">
+              <div class="project-browser-frame">
+                <div class="browser-bar" aria-hidden="true">
+                  <span class="browser-dot dot-red"></span>
+                  <span class="browser-dot dot-yellow"></span>
+                  <span class="browser-dot dot-green"></span>
+                  <span class="browser-url">record-shoes.com</span>
+                </div>
+                <div class="project-img-wrap" id="project-2-imgwrap" title="Klik untuk memperbesar tampilan">
+                  <img
+                    src="assets/project-record.png"
+                    alt="Tampilan Website E-Commerce Record Shoes - PT Jaya Mandiri"
+                    class="project-img"
+                    id="project-2-img"
+                    loading="lazy"
+                  />
+                  <div class="project-img-overlay">
+                    <span class="view-btn">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/><path fill-rule="evenodd" d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 0 1 0-1.113ZM17.25 12a5.25 5.25 0 1 1-10.5 0 5.25 5.25 0 0 1 10.5 0Z" clip-rule="evenodd"/></svg>
+                      Perbesar
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-client-tag" id="project-2-client">
+                <span>📍 PT Jaya Mandiri (Record Shoes)</span>
+              </div>
+              <h3 class="project-title" id="project-2-title">Website E-Commerce Record Shoes</h3>
+              <p class="project-desc" id="project-2-desc">
+                Platform e-commerce resmi brand sepatu Record. Dibangun dengan arsitektur modern menggunakan Laravel, PHP, React, dan REST API. Menghadirkan fitur katalog koleksi street style interaktif, pencarian sepatu cepat, sistem order online terintegrasi, dan direct WhatsApp Shopping checkout.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 5: Sistem ERP (Enterprise Resource Planning) -->
+        <article class="project-card reveal" id="project-5">
+          <div class="project-card-inner">
+            <div class="project-top">
+              <div class="project-tags">
+                <span class="project-tag">Laravel</span>
+                <span class="project-tag">PHP</span>
+                <span class="project-tag">TypeScript</span>
+                <span class="project-tag">MySQL</span>
+                <span class="project-tag">Sistem ERP</span>
+              </div>
+              <div class="project-links">
+                <span class="project-tag" style="background: rgba(16,185,129,0.08); border-color: rgba(16,185,129,0.25); color: #059669; font-weight: 700;">Internal System</span>
+              </div>
+            </div>
+            <div class="project-visual" id="project-5-visual">
+              <div class="project-browser-frame">
+                <div class="browser-bar" aria-hidden="true">
+                  <span class="browser-dot dot-red"></span>
+                  <span class="browser-dot dot-yellow"></span>
+                  <span class="browser-dot dot-green"></span>
+                  <span class="browser-url">erp.bisnis-internal.com</span>
+                </div>
+                <div class="project-img-wrap" id="project-5-imgwrap" title="Klik untuk memperbesar tampilan">
+                  <img
+                    src="assets/project-erp.png"
+                    alt="Tampilan Portal Login Sistem ERP - Kelola Bisnis Lebih Cerdas"
+                    class="project-img"
+                    id="project-5-img"
+                    loading="lazy"
+                  />
+                  <div class="project-img-overlay">
+                    <span class="view-btn">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/><path fill-rule="evenodd" d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 0 1 0-1.113ZM17.25 12a5.25 5.25 0 1 1-10.5 0 5.25 5.25 0 0 1 10.5 0Z" clip-rule="evenodd"/></svg>
+                      Perbesar
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-client-tag" id="project-5-client">
+                <span>📍 Sistem Manajemen Bisnis &amp; Operasional CV.Tripaq</span>
+              </div>
+              <h3 class="project-title" id="project-5-title">Sistem ERP — Kelola Bisnis Lebih Cerdas</h3>
+              <p class="project-desc" id="project-5-desc">
+                Platform ERP terintegrasi untuk menyederhanakan operasional bisnis: pengelolaan Sales Order &amp; Purchase Order, penerbitan invoice &amp; verifikasi pembayaran otomatis, kontrol piutang &amp; arus kas keuangan, serta sinkronisasi marketplace (Shopee &amp; TikTok Shop).
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4: Employee Attendance System (GPS + Photo) -->
+        <article class="project-card reveal" id="project-4">
+          <div class="project-card-inner">
+            <div class="project-top">
+              <div class="project-tags">
+                <span class="project-tag">Laravel</span>
+                <span class="project-tag">PHP</span>
+                <span class="project-tag">Tailwinds CSS</span>
+                <span class="project-tag">GPS Geolocation</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/muhsirojulmunir/absensi-laravel12" target="_blank" rel="noopener noreferrer" class="project-link" id="project-4-github" aria-label="Repository GitHub Absensi Record Shoes" title="GitHub Repository Absensi Record Shoes">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2Z"/></svg>
+                </a>
+                <a href="https://www.absensi.recordshoes.com" target="_blank" rel="noopener noreferrer" class="project-link" id="project-4-demo" aria-label="Demo live sistem absensi karyawan Record Shoes" title="Buka Portal Absensi Record Shoes">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M15.75 2.25H21a.75.75 0 0 1 .75v5.25a.75.75 0 0 1-1.5 0V4.81L8.03 17.03a.75.75 0 0 1-1.06-1.06L19.19 3.75h-3.44a.75.75 0 0 1 0-1.5Zm-10.5 4.5a1.5 1.5 0 0 0-1.5 1.5v10.5a1.5 1.5 0 0 0 1.5 1.5h10.5a1.5 1.5 0 0 0 1.5-1.5V10.5a.75.75 0 0 1 1.5 0v8.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V8.25a3 3 0 0 1 3-3h8.25a.75.75 0 0 1 0 1.5H5.25Z" clip-rule="evenodd"/></svg>
+                </a>
+              </div>
+            </div>
+            <div class="project-visual" id="project-4-visual">
+              <div class="project-browser-frame">
+                <div class="browser-bar" aria-hidden="true">
+                  <span class="browser-dot dot-red"></span>
+                  <span class="browser-dot dot-yellow"></span>
+                  <span class="browser-dot dot-green"></span>
+                  <span class="browser-url">absensi.jmn-matrix.internal</span>
+                </div>
+                <div class="project-img-wrap" id="project-4-imgwrap" title="Klik untuk memperbesar tampilan">
+                  <img
+                    src="assets/project-absensi.png"
+                    alt="Tampilan Portal Sistem Absensi Karyawan GPS & Foto - JMN Matrix Record"
+                    class="project-img"
+                    id="project-4-img"
+                    loading="lazy"
+                  />
+                  <div class="project-img-overlay">
+                    <span class="view-btn">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/><path fill-rule="evenodd" d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 0 1 0-1.113ZM17.25 12a5.25 5.25 0 1 1-10.5 0 5.25 5.25 0 0 1 10.5 0Z" clip-rule="evenodd"/></svg>
+                      Perbesar
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-client-tag" id="project-4-client">
+                <span>📍 PT Jaya Mandiri (JMN Matrix Record)</span>
+              </div>
+              <h3 class="project-title" id="project-4-title">Sistem Absensi Karyawan (Foto + GPS Counter)</h3>
+              <p class="project-desc" id="project-4-desc">
+                Portal absensi digital (JMN Matrix) untuk staf &amp; karyawan toko/counter cabang. Dilengkapi verifikasi presensi berbasis foto selfie langsung dan validasi radius koordinat GPS di masing-masing titik lokasi counter/toko untuk memastikan kehadiran akurat secara real-time.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3: Workflow Automation (Tengah Bawah) -->
+        <article class="project-card project-card--center reveal" id="project-3">
+          <div class="project-card-inner">
+            <div class="project-top">
+              <div class="project-tags">
+                <span class="project-tag">n8n</span>
+                <span class="project-tag">WhatsApp API</span>
+                <span class="project-tag">Google Gemini AI</span>
+                <span class="project-tag">Airtable/Goggle Sheets</span>
+              </div>
+            </div>
+            <div class="project-visual" id="project-3-visual">
+              <div class="project-browser-frame">
+                <div class="browser-bar" aria-hidden="true">
+                  <span class="browser-dot dot-red"></span>
+                  <span class="browser-dot dot-yellow"></span>
+                  <span class="browser-dot dot-green"></span>
+                  <span class="browser-url">n8n.workflow-editor.internal</span>
+                </div>
+                <div class="project-img-wrap" id="project-3-imgwrap" title="Klik untuk memperbesar tampilan">
+                  <img
+                    src="assets/project-automation.jpg"
+                    alt="Tampilan Arsitektur Workflow Automation n8n & Gemini AI"
+                    class="project-img"
+                    id="project-3-img"
+                    loading="lazy"
+                  />
+                  <div class="project-img-overlay">
+                    <span class="view-btn">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/><path fill-rule="evenodd" d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 0 1 0-1.113ZM17.25 12a5.25 5.25 0 1 1-10.5 0 5.25 5.25 0 0 1 10.5 0Z" clip-rule="evenodd"/></svg>
+                      Perbesar
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-client-tag" id="project-3-client">
+                <span>📍 PT Jaya Mandiri (Record)</span>
+              </div>
+              <h3 class="project-title" id="project-3-title">Workflow Automation System</h3>
+              <p class="project-desc" id="project-3-desc">
+                Merancang arsitektur otomatisasi bisnis dengan n8n: mengintegrasikan WhatsApp Webhook, Chatbot AI (Gemini), Google Sheets Session Storage, otomatisasi analisa performa iklan harian (Ads Performance), dan pengiriman laporan otomatis ke Owner.
+              </p>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ EXPERIENCE ═══════════════════════════ -->
+  <section class="section experience-section" id="experience">
+    <div class="container">
+      <div class="section-header reveal" id="experience-header">
+        <span class="section-label">Perjalanan</span>
+        <h2 class="section-title">Pengalaman <span class="accent">Kerja</span></h2>
+        <p class="section-desc">Jejak profesional saya dari dunia retail & content hingga pengembangan software.</p>
+      </div>
+
+      <div class="timeline" id="timeline">
+
+        <!-- Exp 1: PT Jaya Mandiri -->
+        <div class="timeline-item reveal" id="exp-1">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card" id="exp-card-1">
+            <div class="timeline-meta">
+              <span class="timeline-date" id="exp-1-date">Apr 2025 — Sep 2026</span>
+              <span class="timeline-badge timeline-badge--current">Terbaru</span>
+            </div>
+            <h3 class="timeline-role" id="exp-1-role">Web Developer & Automation Engineer</h3>
+            <p class="timeline-company" id="exp-1-company">PT Jaya Mandiri (Record)</p>
+            <ul class="timeline-list" id="exp-1-list">
+              <li>Mengembangkan dan memelihara website E-Commerce, sistem absensi, dan landing page menggunakan Laravel, PHP, React, dan REST API</li>
+              <li>Merancang workflow automation dengan n8n serta mengintegrasikan WhatsApp, Airtable/Goggle Sheets, Meta Ads, dan Claude AI</li>
+              <li>Mengembangkan dan mengoptimalkan fitur aplikasi sesuai kebutuhan bisnis dan alur kerja perusahaan</li>
+              <li>Mendesain banner promosi untuk Shopee dan media sosial</li>
+              <li>Mengelola dan mengoptimalkan stok produk di Shopee</li>
+            </ul>
+            <div class="timeline-tags">
+              <span class="tl-tag">Laravel</span>
+              <span class="tl-tag">React</span>
+              <span class="tl-tag">PHP</span>
+              <span class="tl-tag">n8n</span>
+              <span class="tl-tag">Claude AI</span>
+              <span class="tl-tag">WhatsApp API</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exp 2: PT Global Indo Inovatif -->
+        <div class="timeline-item reveal" id="exp-2">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card" id="exp-card-2">
+            <div class="timeline-meta">
+              <span class="timeline-date" id="exp-2-date">Des 2022 — Apr 2025</span>
+            </div>
+            <h3 class="timeline-role" id="exp-2-role">Content Creator & Digital Marketing</h3>
+            <p class="timeline-company" id="exp-2-company">PT Global Indo Inovatif (Honey Boo)</p>
+            <ul class="timeline-list" id="exp-2-list">
+              <li>Menguasai software editing CapCut, Canva, dan Adobe Illustrator untuk produksi konten visual</li>
+              <li>Memiliki kemampuan copywriting dan kreativitas konten yang kuat</li>
+              <li>Memahami digital marketing serta menyusun strategi konten yang efektif</li>
+              <li>Mampu mengidentifikasi target audiens dengan tepat</li>
+            </ul>
+            <div class="timeline-tags">
+              <span class="tl-tag">CapCut</span>
+              <span class="tl-tag">Canva</span>
+              <span class="tl-tag">Adobe Illustrator</span>
+              <span class="tl-tag">Copywriting</span>
+              <span class="tl-tag">Digital Marketing</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exp 3: OPPO -->
+        <div class="timeline-item reveal" id="exp-3">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card" id="exp-card-3">
+            <div class="timeline-meta">
+              <span class="timeline-date" id="exp-3-date">Mei 2019 — Agt 2022</span>
+            </div>
+            <h3 class="timeline-role" id="exp-3-role">Sales & Customer Service</h3>
+            <p class="timeline-company" id="exp-3-company">PT World Innovative Telecommunications (OPPO)</p>
+            <ul class="timeline-list" id="exp-3-list">
+              <li>Mampu berkomunikasi dengan baik dan profesional kepada pelanggan</li>
+              <li>Bekerja secara tim maupun individual dengan hasil yang optimal</li>
+              <li>Bertanggung jawab penuh terhadap hasil dan pekerjaan yang ditugaskan</li>
+              <li>Mengikuti perkembangan gadget terkini untuk memberikan informasi akurat ke pelanggan</li>
+            </ul>
+            <div class="timeline-tags">
+              <span class="tl-tag">Customer Service</span>
+              <span class="tl-tag">Komunikasi</span>
+              <span class="tl-tag">Teamwork</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+  <footer class="footer" id="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <a href="#hero" class="footer-brand">&lt;Sirojul /&gt;</a>
+        <p class="footer-copy">
+          &copy; <span id="footer-year">2026</span> M. Sirojul Munir &bull; All Rights Reserved.
+        </p>
+      </div>
+      <div class="footer-right">
+        <div class="footer-contact-items">
+          <a href="https://wa.me/6285706013038" target="_blank" rel="noopener noreferrer" class="footer-contact-badge">
+            <span class="f-dot"></span> 0857-0601-3038 (WA)
+          </a>
+          <a href="mailto:munirxanm40@gmail.com" class="footer-contact-badge">
+            munirxanm40@gmail.com
+          </a>
+        </div>
+        <div class="footer-social-links">
+          <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="footer-icon-link" aria-label="GitHub">GitHub</a>
+          <a href="https://instagram.com/muhsairojulmunir" target="_blank" rel="noopener noreferrer" class="footer-icon-link" aria-label="Instagram">Instagram</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Project Lightbox Modal -->
+  <div class="lightbox-modal" id="lightbox-modal" aria-hidden="true" role="dialog" aria-labelledby="lightbox-title">
+    <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightbox-close" aria-label="Tutup preview">&times;</button>
+      <div class="lightbox-header">
+        <h4 class="lightbox-title" id="lightbox-title">Website E-Commerce Record Shoes</h4>
+        <span class="lightbox-caption" id="lightbox-caption">PT Jaya Mandiri (Record) — Laravel, PHP, React &amp; REST API</span>
+      </div>
+      <div class="lightbox-body">
+        <img src="" alt="Full Preview Proyek" id="lightbox-img" class="lightbox-img" />
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
