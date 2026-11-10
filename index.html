@@ -15,11 +15,27 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Multilingual Intro Preloader Overlay -->
+  <!-- ═══════════════════════════ CINEMATIC INTRO PRELOADER (Ref: ekawahyu-portofolio) ═══════════════════════════ -->
   <div class="preloader" id="preloader" aria-hidden="false">
-    <div class="preloader-inner">
-      <div class="preloader-dot"></div>
-      <h1 class="preloader-text" id="preloader-text">Halo</h1>
+    <!-- WebGL Lightning / Plasma Ray Background -->
+    <canvas id="preloader-webgl" class="preloader-bg-canvas" aria-hidden="true"></canvas>
+
+    <!-- Particle Text Canvas & Loading Counter Overlay -->
+    <div class="preloader-content">
+      <div class="preloader-text-wrap">
+        <canvas id="preloader-particles" class="preloader-particle-canvas" aria-hidden="true"></canvas>
+      </div>
+
+      <div class="preloader-progress-box">
+        <div class="preloader-progress-info">
+          <span class="preloader-progress-label">Loading</span>
+          <span class="preloader-progress-val" id="preloader-counter">0%</span>
+        </div>
+        <div class="preloader-progress-track">
+          <div class="preloader-progress-glow" id="preloader-progress-glow"></div>
+          <div class="preloader-progress-fill" id="preloader-progress-fill"></div>
+        </div>
+      </div>
     </div>
   </div>
 
