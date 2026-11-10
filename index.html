@@ -15,26 +15,54 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- ═══════════════════════════ CINEMATIC INTRO PRELOADER (Ref: ekawahyu-portofolio) ═══════════════════════════ -->
+  <!-- ═══════════════════════════ CINEMATIC INTRO PRELOADER (Concept A: Window Chrome Morph) ═══════════════════════════ -->
   <div class="preloader" id="preloader" aria-hidden="false">
-    <!-- WebGL Lightning / Plasma Ray Background -->
-    <canvas id="preloader-webgl" class="preloader-bg-canvas" aria-hidden="true"></canvas>
+    <!-- Ambient Floating Orbs & Grid -->
+    <div class="preloader-orb preloader-orb--1" aria-hidden="true"></div>
+    <div class="preloader-orb preloader-orb--2" aria-hidden="true"></div>
+    <div class="preloader-grid" aria-hidden="true"></div>
 
-    <!-- Particle Text Canvas & Loading Counter Overlay -->
-    <div class="preloader-content">
-      <div class="preloader-text-wrap">
-        <canvas id="preloader-particles" class="preloader-particle-canvas" aria-hidden="true"></canvas>
+    <!-- Central Floating Tech Glass Card (Matches Hero tech-profile-card) -->
+    <div class="preloader-card" id="preloader-card">
+      <div class="card-ambient-glow" aria-hidden="true"></div>
+
+      <!-- Card Window Header Bar -->
+      <div class="card-glass-header" aria-hidden="true">
+        <div class="card-traffic-lights">
+          <span class="t-dot dot-red"></span>
+          <span class="t-dot dot-yellow"></span>
+          <span class="t-dot dot-green"></span>
+        </div>
+        <span class="card-code-tag" id="preloader-tag">sirojul.dev</span>
       </div>
 
-      <div class="preloader-progress-box">
-        <div class="preloader-progress-info">
-          <span class="preloader-progress-label">Loading</span>
-          <span class="preloader-progress-val" id="preloader-counter">0%</span>
+      <!-- Card Body Content -->
+      <div class="preloader-body">
+        <div class="preloader-brand">
+          <span class="preloader-bracket preloader-bracket--left">&lt;</span>
+          <span class="preloader-name" id="preloader-name">Sirojul</span>
+          <span class="preloader-bracket preloader-bracket--right">/&gt;</span>
         </div>
-        <div class="preloader-progress-track">
-          <div class="preloader-progress-glow" id="preloader-progress-glow"></div>
-          <div class="preloader-progress-fill" id="preloader-progress-fill"></div>
+        <div class="preloader-role">
+          <span class="preloader-role-prefix">//</span>
+          <span class="preloader-role-text" id="preloader-role-text">Web Developer &amp; Specialist</span>
         </div>
+
+        <!-- Progress Indicator -->
+        <div class="preloader-progress-wrap">
+          <div class="preloader-progress-header">
+            <span class="preloader-status" id="preloader-status">Memuat portofolio...</span>
+            <span class="preloader-pct" id="preloader-pct">0%</span>
+          </div>
+          <div class="preloader-bar-track">
+            <div class="preloader-bar-fill" id="preloader-bar-fill"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card Footer Hint -->
+      <div class="preloader-footer">
+        <span class="preloader-hint">Klik layar atau tekan Esc untuk skip</span>
       </div>
     </div>
   </div>
