@@ -157,6 +157,61 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 .btn--full { width: 100%; justify-content: center; }
 
+/* ── MULTILINGUAL INTRO PRELOADER ────────────────────────────── */
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: #090D16;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  will-change: transform;
+  transition: transform 0.85s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.preloader.preloader--done {
+  transform: translateY(-100%);
+  pointer-events: none;
+}
+
+.preloader-inner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.preloader-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--cyan-400);
+  box-shadow: 0 0 16px rgba(14, 165, 233, 0.85);
+  animation: pulsePreloader 1.2s infinite ease-in-out;
+}
+
+@keyframes pulsePreloader {
+  0%, 100% { transform: scale(0.85); opacity: 0.6; }
+  50% { transform: scale(1.3); opacity: 1; }
+}
+
+.preloader-text {
+  font-family: var(--font-sans);
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: -0.03em;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.18s ease, transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.preloader-text.fade-swap {
+  opacity: 0;
+  transform: translateY(14px);
+}
+
 /* ── TOP SCROLL PROGRESS BAR ────────────────────────────────────── */
 .scroll-progress-bar {
   position: fixed;

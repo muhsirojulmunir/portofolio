@@ -3,6 +3,49 @@
    ═══════════════════════════════════════════════════════════════ */
 'use strict';
 
+// ── Multilingual Intro Preloader ─────────────────────────────────
+const preloader = document.getElementById('preloader');
+const preloaderText = document.getElementById('preloader-text');
+
+if (preloader && preloaderText) {
+  const GREETINGS = [
+    'Halo',          // Indonesian
+    'Hello',         // English
+    'Bonjour',       // French
+    'Konnichiwa',    // Japanese
+    'Hola',          // Spanish
+    'Sirojul Munir'  // Final branding name
+  ];
+
+  let greetIdx = 0;
+  // Lock scroll during intro
+  document.body.style.overflow = 'hidden';
+
+  const switchGreeting = () => {
+    if (greetIdx < GREETINGS.length - 1) {
+      greetIdx++;
+      // Smooth fade-out then change text and fade-in
+      preloaderText.classList.add('fade-swap');
+      setTimeout(() => {
+        preloaderText.textContent = GREETINGS[greetIdx];
+        preloaderText.classList.remove('fade-swap');
+      }, 140);
+
+      const delay = (greetIdx === GREETINGS.length - 1) ? 550 : 260;
+      setTimeout(switchGreeting, delay);
+    } else {
+      // Intro sequence completed: slide curtain up smoothly
+      setTimeout(() => {
+        preloader.classList.add('preloader--done');
+        document.body.style.overflow = '';
+      }, 400);
+    }
+  };
+
+  // Start sequence shortly after initial paint
+  setTimeout(switchGreeting, 350);
+}
+
 // ── Navbar: scroll-aware glassmorphism ───────────────────────────
 const navbar = document.getElementById('navbar');
 const navLinks = document.querySelectorAll('.nav-link');
