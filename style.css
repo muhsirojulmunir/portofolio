@@ -157,236 +157,311 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 .btn--full { width: 100%; justify-content: center; }
 
-/* ── CINEMATIC INTRO PRELOADER (Concept A: Window Chrome Morph) ── */
-.preloader {
+/* ── WARTEG TECH DESIGN TOKENS ───────────────────────────────── */
+:root {
+  --warteg-blue:        #0284C7;
+  --warteg-blue-dark:   #0369A1;
+  --warteg-yellow:      #F59E0B;
+  --warteg-yellow-dark: #D97706;
+  --warteg-orange:      #EA580C;
+  --warteg-orange-dark: #C2410C;
+  --warteg-green:       #10B981;
+  --warteg-cream:       #FFFBEB;
+}
+
+/* ── WARTEG TOP SPANDUK BANNER ────────────────────────────────── */
+.warteg-top-banner {
+  background: linear-gradient(90deg, #0284C7 0%, #D97706 50%, #0284C7 100%);
+  color: #FFFFFF;
+  padding: 6px 16px;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-align: center;
+  position: relative;
+  z-index: 1001;
+  border-bottom: 2px dashed rgba(255, 255, 255, 0.4);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.banner-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  max-width: var(--container-w);
+  margin: 0 auto;
+}
+
+.banner-star {
+  color: #FEF08A;
+  animation: starPulse 1.4s ease-in-out infinite alternate;
+}
+
+@keyframes starPulse {
+  0% { transform: scale(0.9); opacity: 0.7; }
+  100% { transform: scale(1.2); opacity: 1; }
+}
+
+/* ── INTRO PRELOADER: BUKA TIRAI WARTEG ───────────────────────── */
+.warteg-preloader {
   position: fixed;
   inset: 0;
   width: 100vw;
   height: 100vh;
   height: 100dvh;
   z-index: 999999;
-  background-color: #F8FAFC;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-  opacity: 1;
-  filter: blur(0);
-  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
-              filter 0.65s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, filter;
+  background-color: #0F172A;
+  transition: opacity 0.5s ease 0.65s;
 }
 
-.preloader.preloader--done {
-  opacity: 0;
-  filter: blur(10px);
+.warteg-preloader.preloader--done {
   pointer-events: none;
-}
-
-.preloader.preloader--done .preloader-card {
-  transform: scale(1.08) translateY(-14px);
   opacity: 0;
-  filter: blur(12px);
 }
 
-/* Ambient Dot Grid & Floating Orbs */
-.preloader-grid {
+.warteg-preloader.preloader--done .warteg-curtain--left {
+  transform: translateX(-102%);
+}
+
+.warteg-preloader.preloader--done .warteg-curtain--right {
+  transform: translateX(102%);
+}
+
+.warteg-preloader.preloader--done .warteg-loader-card {
+  transform: scale(1.1) translateY(-16px);
+  opacity: 0;
+}
+
+/* Curtains */
+.warteg-curtain {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50.5%;
+  z-index: 10;
+  transition: transform 0.85s cubic-bezier(0.77, 0, 0.175, 1);
+  will-change: transform;
+  overflow: hidden;
+}
+
+.warteg-curtain--left {
+  left: 0;
+  background: linear-gradient(135deg, #0284C7 0%, #0369A1 100%);
+  border-right: 5px solid #F59E0B;
+  box-shadow: 12px 0 35px rgba(0, 0, 0, 0.45);
+}
+
+.warteg-curtain--right {
+  right: 0;
+  background: linear-gradient(225deg, #F59E0B 0%, #D97706 100%);
+  border-left: 5px solid #0284C7;
+  box-shadow: -12px 0 35px rgba(0, 0, 0, 0.45);
+}
+
+.curtain-stripes {
   position: absolute;
   inset: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 40px,
+    rgba(255, 255, 255, 0.06) 40px,
+    rgba(255, 255, 255, 0.06) 80px
+  );
   pointer-events: none;
-  background-image: radial-gradient(rgba(37, 99, 235, 0.1) 1.2px, transparent 1.2px);
-  background-size: 26px 26px;
-  opacity: 0.8;
 }
 
-.preloader-orb {
+.curtain-fringe {
   position: absolute;
-  border-radius: 50%;
-  pointer-events: none;
-  filter: blur(50px);
-  will-change: transform, opacity;
-  animation: preloaderOrbFloat 6s ease-in-out infinite alternate;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 18px;
+  background: repeating-linear-gradient(
+    45deg,
+    #F59E0B,
+    #F59E0B 10px,
+    #0284C7 10px,
+    #0284C7 20px
+  );
 }
 
-.preloader-orb--1 {
-  top: -80px;
-  left: -80px;
-  width: 360px;
-  height: 360px;
-  background: radial-gradient(circle, rgba(37, 99, 235, 0.22) 0%, transparent 70%);
-}
-
-.preloader-orb--2 {
-  bottom: -80px;
-  right: -80px;
-  width: 320px;
-  height: 320px;
-  background: radial-gradient(circle, rgba(14, 165, 233, 0.22) 0%, transparent 70%);
-  animation-delay: -3s;
-}
-
-@keyframes preloaderOrbFloat {
-  0% { transform: translateY(0) scale(1); opacity: 0.8; }
-  100% { transform: translateY(20px) scale(1.06); opacity: 1; }
-}
-
-/* Central Floating Tech Glass Card */
-.preloader-card {
+/* Central Steaming Plate Loader Card */
+.warteg-loader-card {
   position: relative;
-  z-index: 10;
+  z-index: 20;
   width: 90%;
-  max-width: 420px;
-  background: rgba(255, 255, 255, 0.94);
+  max-width: 440px;
+  background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-radius: 24px;
-  border: 1.5px solid rgba(37, 99, 235, 0.18);
+  border-radius: 28px;
+  padding: 32px 28px 26px;
+  text-align: center;
   box-shadow:
-    0 24px 60px -10px rgba(15, 23, 42, 0.12),
-    0 10px 30px rgba(37, 99, 235, 0.08);
-  overflow: hidden;
-  transform: translateY(0) scale(1);
-  opacity: 1;
-  filter: blur(0);
-  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1),
-              opacity 0.55s ease,
-              filter 0.55s ease;
-  will-change: transform, opacity, filter;
+    0 25px 60px -10px rgba(0, 0, 0, 0.35),
+    0 10px 30px rgba(245, 158, 11, 0.2);
+  border: 2px solid rgba(245, 158, 11, 0.4);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease;
   cursor: pointer;
 }
 
-.preloader-card:hover {
-  border-color: rgba(37, 99, 235, 0.32);
+.loader-banner-tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  color: #B45309;
+  background: #FEF3C7;
+  border: 1px solid #FCD34D;
+  padding: 4px 14px;
+  border-radius: 9999px;
+  margin-bottom: 20px;
 }
 
-.preloader-card .card-glass-header {
-  padding: 12px 18px;
-  background: rgba(248, 250, 252, 0.92);
-  border-bottom: 1px solid rgba(15, 23, 42, 0.06);
-}
-
-.preloader-body {
-  padding: 34px 28px 26px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.preloader-brand {
+/* Steaming Porcelain Plate */
+.steaming-plate-wrap {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  margin: 0 auto 18px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 3px;
-  font-family: var(--font-sans);
-  font-size: clamp(2.1rem, 6vw, 2.85rem);
-  font-weight: 800;
-  line-height: 1.1;
-  letter-spacing: -0.035em;
-  color: var(--text-primary);
-  margin-bottom: 8px;
 }
 
-.preloader-bracket {
-  color: var(--blue-500);
-  font-weight: 700;
-  display: inline-block;
-  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+.steam-group {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  pointer-events: none;
 }
 
-.preloader-bracket--left {
-  margin-right: 2px;
+.steam {
+  width: 6px;
+  height: 24px;
+  background: linear-gradient(to top, rgba(203, 213, 225, 0.7), transparent);
+  border-radius: 999px;
+  filter: blur(1px);
+  animation: steamRise 1.8s ease-in-out infinite;
 }
 
-.preloader-bracket--right {
-  margin-left: 2px;
+.steam--1 { animation-delay: 0s; }
+.steam--2 { animation-delay: 0.4s; height: 32px; }
+.steam--3 { animation-delay: 0.8s; }
+
+@keyframes steamRise {
+  0% { transform: translateY(0) scaleX(1); opacity: 0.8; }
+  50% { transform: translateY(-16px) scaleX(1.3); opacity: 0.5; }
+  100% { transform: translateY(-30px) scaleX(1.6); opacity: 0; }
 }
 
-.preloader-name {
-  background: linear-gradient(135deg, #0F172A 30%, #2563EB 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.preloader-role {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--text-secondary);
+.plate-dish {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #FFFFFF 60%, #E2E8F0 100%);
+  border: 4px solid #0284C7;
+  box-shadow:
+    inset 0 2px 6px rgba(0, 0, 0, 0.08),
+    0 12px 28px -4px rgba(15, 23, 42, 0.18);
   display: flex;
   align-items: center;
-  gap: 6px;
-  margin-bottom: 26px;
+  justify-content: center;
+  position: relative;
 }
 
-.preloader-role-prefix {
-  color: var(--blue-500);
-  font-weight: 700;
+.plate-rice {
+  font-size: 2.8rem;
+  line-height: 1;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
 }
 
-.preloader-progress-wrap {
+.plate-dish-icon {
+  position: absolute;
+  font-size: 1.4rem;
+  line-height: 1;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.12));
+}
+
+.plate-dish-icon--egg { top: 6px; right: 10px; }
+.plate-dish-icon--fish { bottom: 8px; left: 10px; }
+.plate-dish-icon--tempeh { bottom: 8px; right: 12px; }
+
+.loader-title {
+  font-family: var(--font-sans);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+  letter-spacing: -0.02em;
+}
+
+.loader-status {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #D97706;
+  margin-bottom: 22px;
+  min-height: 20px;
+}
+
+.loader-progress-box {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 8px;
+  margin-bottom: 16px;
 }
 
-.preloader-progress-header {
+.loader-progress-info {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
   font-family: var(--font-mono);
   font-size: 0.76rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--text-muted);
 }
 
-.preloader-status {
-  transition: color 0.3s ease;
+.loader-pct {
+  color: #0284C7;
+  font-weight: 800;
 }
 
-.preloader-status.ready {
-  color: #10B981;
-  font-weight: 700;
-}
-
-.preloader-pct {
-  color: var(--blue-600);
-  font-weight: 700;
-  font-variant-numeric: tabular-nums;
-}
-
-.preloader-bar-track {
+.loader-bar-track {
   width: 100%;
-  height: 4px;
-  background: rgba(37, 99, 235, 0.1);
+  height: 6px;
+  background: #FEF3C7;
   border-radius: 999px;
   overflow: hidden;
-  position: relative;
+  border: 1px solid rgba(245, 158, 11, 0.25);
 }
 
-.preloader-bar-fill {
+.loader-bar-fill {
   height: 100%;
   width: 0%;
-  background: linear-gradient(90deg, #2563EB, #0EA5E9);
-  box-shadow: 0 0 10px rgba(37, 99, 235, 0.45);
+  background: linear-gradient(90deg, #F59E0B 0%, #EA580C 100%);
   border-radius: 999px;
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
   transition: width 0.05s linear;
 }
 
-.preloader-footer {
-  padding: 10px 18px;
-  background: rgba(248, 250, 252, 0.7);
-  border-top: 1px solid rgba(15, 23, 42, 0.05);
-  text-align: center;
-}
-
-.preloader-hint {
+.loader-skip-hint {
+  display: block;
   font-family: var(--font-sans);
   font-size: 0.7rem;
   color: var(--text-muted);
-  letter-spacing: 0.02em;
 }
 
 /* ── TOP SCROLL PROGRESS BAR ────────────────────────────────────── */
@@ -1907,3 +1982,645 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     padding: 8px 12px;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   WARTEG TECH STYLING EXTENSION
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Navbar Brand & Halal Badge */
+.warteg-navbar {
+  border-bottom: 1px solid rgba(2, 132, 199, 0.12);
+}
+
+.logo-emoji {
+  font-size: 1.35rem;
+  margin-right: 4px;
+}
+
+.logo-badge-halal {
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  background: #ECFDF5;
+  color: #059669;
+  border: 1px solid #A7F3D0;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.nav-link--cta {
+  background: linear-gradient(135deg, #EA580C 0%, #C2410C 100%) !important;
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
+  padding: 6px 14px !important;
+  border-radius: 9999px !important;
+  box-shadow: 0 4px 12px rgba(234, 88, 12, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.nav-link--cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(234, 88, 12, 0.45);
+}
+
+/* Warteg Hero Section */
+.warteg-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.warteg-tile-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.55;
+  background-image: 
+    linear-gradient(to right, rgba(2, 132, 199, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(2, 132, 199, 0.07) 1px, transparent 1px);
+  background-size: 36px 36px;
+}
+
+.hero-spanduk-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #B45309;
+  background: #FEF3C7;
+  border: 1.5px solid #FCD34D;
+  padding: 5px 14px;
+  border-radius: 9999px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.12);
+}
+
+.badge-pulse {
+  color: #059669;
+  font-weight: 800;
+}
+
+.hero-name-warteg {
+  color: #0284C7;
+  background: linear-gradient(135deg, #0284C7 0%, #D97706 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Warteg Buttons */
+.btn--warteg-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #EA580C 0%, #C2410C 100%);
+  color: #FFFFFF;
+  font-weight: 700;
+  padding: 12px 26px;
+  border-radius: 9999px;
+  box-shadow: 0 8px 24px rgba(234, 88, 12, 0.35);
+  transition: all 0.25s ease;
+}
+
+.btn--warteg-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(234, 88, 12, 0.45);
+  color: #FFFFFF;
+}
+
+.btn--warteg-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(2, 132, 199, 0.08);
+  border: 1.5px solid rgba(2, 132, 199, 0.3);
+  color: #0284C7;
+  font-weight: 700;
+  padding: 12px 24px;
+  border-radius: 9999px;
+  transition: all 0.25s ease;
+}
+
+.btn--warteg-ghost:hover {
+  background: rgba(2, 132, 199, 0.15);
+  transform: translateY(-2px);
+}
+
+.warteg-stats .warteg-stat-card {
+  border-color: rgba(2, 132, 199, 0.15);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.warteg-profile-card {
+  border-color: rgba(245, 158, 11, 0.35);
+  box-shadow:
+    0 24px 60px -10px rgba(15, 23, 42, 0.12),
+    0 10px 30px rgba(245, 158, 11, 0.15);
+}
+
+.warteg-status-pill {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #059669;
+  background: #ECFDF5;
+  border: 1px solid #A7F3D0;
+  padding: 3px 10px;
+  border-radius: 9999px;
+}
+
+/* ── ETALASE KACA & DISH CARDS ────────────────────────────────── */
+.warteg-badge {
+  background: #FEF3C7 !important;
+  color: #B45309 !important;
+  border-color: #FCD34D !important;
+}
+
+.etalase-showcase {
+  position: relative;
+  background: #FFFFFF;
+  border: 2px solid rgba(2, 132, 199, 0.18);
+  border-radius: 28px;
+  padding: 36px 28px 40px;
+  box-shadow: 
+    0 24px 60px -12px rgba(2, 132, 199, 0.12),
+    0 8px 24px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  margin-bottom: 48px;
+}
+
+.etalase-roof {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 22px;
+  border-bottom: 2px dashed rgba(2, 132, 199, 0.16);
+  margin-bottom: 32px;
+}
+
+.etalase-roof-tag {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  color: #0284C7;
+  background: #F0F9FF;
+  border: 1px solid #BAE6FD;
+  padding: 5px 16px;
+  border-radius: 9999px;
+}
+
+.dish-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 24px;
+}
+
+.dish-card {
+  background: #FFFFFF;
+  border: 1.5px solid rgba(15, 23, 42, 0.08);
+  border-radius: 20px;
+  padding: 24px;
+  position: relative;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  user-select: none;
+}
+
+.dish-card:hover {
+  transform: translateY(-5px);
+  border-color: #0284C7;
+  box-shadow: 0 16px 36px -8px rgba(2, 132, 199, 0.15);
+}
+
+.dish-card.is-selected {
+  border-color: #EA580C;
+  background: #FFFBF5;
+  box-shadow: 0 14px 32px -6px rgba(234, 88, 12, 0.2);
+  transform: translateY(-4px);
+}
+
+.dish-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  background: #FEF3C7;
+  color: #B45309;
+  border: 1px solid #FCD34D;
+}
+
+.dish-badge--pedas {
+  background: #FEE2E2;
+  color: #DC2626;
+  border-color: #FECACA;
+}
+
+.dish-badge--dingin {
+  background: #E0F2FE;
+  color: #0284C7;
+  border-color: #BAE6FD;
+}
+
+.dish-icon-wrap {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #FFFFFF 60%, #F1F5F9 100%);
+  border: 3px solid #0284C7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  box-shadow: 0 6px 16px rgba(2, 132, 199, 0.12);
+  transition: transform 0.25s ease;
+}
+
+.dish-card:hover .dish-icon-wrap {
+  transform: scale(1.08) rotate(5deg);
+}
+
+.dish-emoji {
+  font-size: 1.85rem;
+  line-height: 1;
+}
+
+.dish-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.dish-tech {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #0284C7;
+  margin-bottom: 10px;
+}
+
+.dish-desc {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 18px;
+  flex-grow: 1;
+}
+
+.dish-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  border-top: 1px dashed rgba(15, 23, 42, 0.08);
+}
+
+.dish-price {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #059669;
+}
+
+.btn-add-dish {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-sans);
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #0284C7;
+  background: #F0F9FF;
+  border: 1px solid #BAE6FD;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  transition: all 0.2s ease;
+  pointer-events: none;
+}
+
+.dish-card.is-selected .btn-add-dish {
+  background: #EA580C;
+  color: #FFFFFF;
+  border-color: #EA580C;
+}
+
+/* ── FLOATING VIRTUAL PLATE (PIRING PESANAN) DRAWER ───────────── */
+.floating-plate-bar {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(140px);
+  z-index: 9990;
+  width: min(92%, 620px);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.floating-plate-bar.is-visible {
+  transform: translateX(-50%) translateY(0);
+}
+
+.plate-bar-inner {
+  background: rgba(15, 23, 42, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid rgba(245, 158, 11, 0.4);
+  border-radius: 9999px;
+  padding: 10px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+}
+
+.plate-bar-icon {
+  position: relative;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.plate-count-badge {
+  position: absolute;
+  top: -4px;
+  right: -8px;
+  background: #EA580C;
+  color: #FFFFFF;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 800;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #0F172A;
+}
+
+.plate-bar-info {
+  flex-grow: 1;
+  min-width: 0;
+}
+
+.plate-bar-title {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.2;
+}
+
+.plate-bar-items {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: #94A3B8;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 260px;
+}
+
+.plate-bar-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.btn-reset-plate {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: #94A3B8;
+  background: transparent;
+  border: none;
+  padding: 4px 6px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.btn-reset-plate:hover {
+  color: #FFFFFF;
+}
+
+.btn--warteg-order {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, #EA580C, #C2410C);
+  color: #FFFFFF !important;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  white-space: nowrap;
+  box-shadow: 0 4px 14px rgba(234, 88, 12, 0.4);
+  transition: transform 0.2s ease;
+}
+
+.btn--warteg-order:hover {
+  transform: scale(1.04);
+}
+
+/* ── NOTA BON KASIR (RECEIPT PAPER) ───────────────────────────── */
+.receipt-container {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.receipt-paper {
+  position: relative;
+  width: 100%;
+  max-width: 580px;
+  background: #FFFDF7;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 20px 50px -10px rgba(15, 23, 42, 0.1);
+  padding: 40px 32px 36px;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  color: #1E293B;
+}
+
+.receipt-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.receipt-brand {
+  font-size: 1.25rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  color: #0284C7;
+  margin-bottom: 4px;
+}
+
+.receipt-address {
+  font-size: 0.72rem;
+  color: #64748B;
+  margin-bottom: 4px;
+}
+
+.receipt-meta {
+  font-size: 0.68rem;
+  color: #94A3B8;
+  letter-spacing: 0.06em;
+  margin-bottom: 14px;
+}
+
+.receipt-divider-dashed {
+  border-top: 1.5px dashed #CBD5E1;
+  margin: 14px 0;
+}
+
+.receipt-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 12px 0;
+  gap: 16px;
+}
+
+.receipt-row--head {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #64748B;
+  letter-spacing: 0.08em;
+  padding: 0 0 6px;
+}
+
+.receipt-col-main {
+  flex-grow: 1;
+}
+
+.receipt-role-title {
+  display: block;
+  font-size: 0.94rem;
+  font-weight: 800;
+  color: #0F172A;
+  margin-bottom: 2px;
+}
+
+.receipt-place {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #0284C7;
+  margin-bottom: 4px;
+}
+
+.receipt-desc-text {
+  font-size: 0.76rem;
+  color: #475569;
+  line-height: 1.5;
+  margin-bottom: 4px;
+}
+
+.receipt-date {
+  font-size: 0.7rem;
+  color: #94A3B8;
+}
+
+.receipt-badge-status {
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: #ECFDF5;
+  color: #059669;
+  border: 1px solid #A7F3D0;
+  flex-shrink: 0;
+}
+
+.receipt-summary {
+  margin: 14px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.78rem;
+}
+
+.summary-line {
+  display: flex;
+  justify-content: space-between;
+  color: #475569;
+}
+
+.summary-line.highlight {
+  color: #0284C7;
+  font-weight: 800;
+}
+
+.receipt-stamp-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 24px 0 16px;
+}
+
+.receipt-stamp {
+  border: 3px double #DC2626;
+  color: #DC2626;
+  padding: 6px 18px;
+  border-radius: 8px;
+  text-align: center;
+  transform: rotate(-6deg);
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  line-height: 1.1;
+  opacity: 0.88;
+}
+
+.receipt-stamp span {
+  display: block;
+  font-size: 0.88rem;
+}
+
+.receipt-stamp small {
+  display: block;
+  font-size: 0.65rem;
+  margin-top: 2px;
+}
+
+.receipt-footer-msg {
+  text-align: center;
+  font-size: 0.7rem;
+  color: #94A3B8;
+  margin-top: 14px;
+}
+
+/* Footer Extension */
+.warteg-footer-brand {
+  font-size: 1.4rem !important;
+  font-weight: 800 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+
+.footer-tagline {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  margin: 6px 0 10px;
+}
+
+.warteg-wa-badge {
+  background: #FFF7ED !important;
+  border-color: #FDBA74 !important;
+  color: #EA580C !important;
+  font-weight: 700 !important;
+}
+

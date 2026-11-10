@@ -117,3 +117,4 @@ Bagian paling interaktif di mana pengunjung bisa memilih lauk:
 - [ ] Interaksi klik lauk ke piring virtual berjalan tanpa error.
 - [ ] Tombol CTA WhatsApp menghasilkan tautan chat yang valid.
 - [ ] Seluruh data proyek, link GitHub, dan foto Sirojul Munir tetap utuh dan berfungsi.
+

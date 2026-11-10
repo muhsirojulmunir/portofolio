@@ -15,55 +15,61 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- ═══════════════════════════ CINEMATIC INTRO PRELOADER (Concept A: Window Chrome Morph) ═══════════════════════════ -->
-  <div class="preloader" id="preloader" aria-hidden="false">
-    <!-- Ambient Floating Orbs & Grid -->
-    <div class="preloader-orb preloader-orb--1" aria-hidden="true"></div>
-    <div class="preloader-orb preloader-orb--2" aria-hidden="true"></div>
-    <div class="preloader-grid" aria-hidden="true"></div>
+  <!-- ═══════════════════════════ INTRO PRELOADER: BUKA TIRAI WARTEG TECH ═══════════════════════════ -->
+  <div class="preloader warteg-preloader" id="preloader" aria-hidden="false">
+    <!-- Left & Right Warteg Fabric Curtains -->
+    <div class="warteg-curtain warteg-curtain--left">
+      <div class="curtain-stripes"></div>
+      <div class="curtain-fringe"></div>
+    </div>
+    <div class="warteg-curtain warteg-curtain--right">
+      <div class="curtain-stripes"></div>
+      <div class="curtain-fringe"></div>
+    </div>
 
-    <!-- Central Floating Tech Glass Card (Matches Hero tech-profile-card) -->
-    <div class="preloader-card" id="preloader-card">
-      <div class="card-ambient-glow" aria-hidden="true"></div>
+    <!-- Steaming Plate & Cooking Progress Center Card -->
+    <div class="warteg-loader-card" id="warteg-loader-card">
+      <div class="loader-banner-tag">★ WARTEG TECH • SIROJUL MUNIR ★</div>
 
-      <!-- Card Window Header Bar -->
-      <div class="card-glass-header" aria-hidden="true">
-        <div class="card-traffic-lights">
-          <span class="t-dot dot-red"></span>
-          <span class="t-dot dot-yellow"></span>
-          <span class="t-dot dot-green"></span>
+      <!-- Steaming Porcelain Plate -->
+      <div class="steaming-plate-wrap">
+        <div class="steam-group" aria-hidden="true">
+          <span class="steam steam--1"></span>
+          <span class="steam steam--2"></span>
+          <span class="steam steam--3"></span>
         </div>
-        <span class="card-code-tag" id="preloader-tag">sirojul.dev</span>
-      </div>
-
-      <!-- Card Body Content -->
-      <div class="preloader-body">
-        <div class="preloader-brand">
-          <span class="preloader-bracket preloader-bracket--left">&lt;</span>
-          <span class="preloader-name" id="preloader-name">Sirojul</span>
-          <span class="preloader-bracket preloader-bracket--right">/&gt;</span>
-        </div>
-        <div class="preloader-role">
-          <span class="preloader-role-prefix">//</span>
-          <span class="preloader-role-text" id="preloader-role-text">Web Developer &amp; Specialist</span>
-        </div>
-
-        <!-- Progress Indicator -->
-        <div class="preloader-progress-wrap">
-          <div class="preloader-progress-header">
-            <span class="preloader-status" id="preloader-status">Memuat portofolio...</span>
-            <span class="preloader-pct" id="preloader-pct">0%</span>
-          </div>
-          <div class="preloader-bar-track">
-            <div class="preloader-bar-fill" id="preloader-bar-fill"></div>
-          </div>
+        <div class="plate-dish">
+          <div class="plate-rice">🍚</div>
+          <div class="plate-dish-icon plate-dish-icon--egg" title="Telor Balado">🍳</div>
+          <div class="plate-dish-icon plate-dish-icon--fish" title="Ikan Tongkol">🐟</div>
+          <div class="plate-dish-icon plate-dish-icon--tempeh" title="Orek Tempe">🥢</div>
         </div>
       </div>
 
-      <!-- Card Footer Hint -->
-      <div class="preloader-footer">
-        <span class="preloader-hint">Klik layar atau tekan Esc untuk skip</span>
+      <h2 class="loader-title">Menyiapkan Pesanan Kodingan</h2>
+      <p class="loader-status" id="preloader-status">Menanak Nasi Pulen Fullstack...</p>
+
+      <!-- Golden Warm Progress Bar -->
+      <div class="loader-progress-box">
+        <div class="loader-progress-info">
+          <span class="loader-progress-label">Proses Masak</span>
+          <span class="loader-pct" id="preloader-pct">0%</span>
+        </div>
+        <div class="loader-bar-track">
+          <div class="loader-bar-fill" id="preloader-bar-fill"></div>
+        </div>
       </div>
+
+      <span class="loader-skip-hint">Klik layar atau tekan [Esc] untuk langsung masuk</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════ SPANDUK KHAS WARTEG BAHARI ═══════════════════════════ -->
+  <div class="warteg-top-banner" id="warteg-top-banner">
+    <div class="banner-inner">
+      <span class="banner-star">★</span>
+      <span class="banner-text">WARTEG TECH SIROJUL — SPESIALIS WEB &amp; OTOMASI WORKFLOW • RASA BINTANG LIMA HARGA MAHASISWA</span>
+      <span class="banner-star">★</span>
     </div>
   </div>
 
@@ -71,15 +77,18 @@
   <div class="scroll-progress-bar" id="scroll-progress-bar" aria-hidden="true"></div>
 
   <!-- ═══════════════════════════ NAVBAR ═══════════════════════════ -->
-  <header class="navbar" id="navbar">
+  <header class="navbar warteg-navbar" id="navbar">
     <div class="nav-inner">
       <a href="#hero" class="nav-logo" id="nav-logo">
-        <span class="logo-bracket">&lt;</span>Sirojul<span class="logo-bracket">/&gt;</span>
+        <span class="logo-emoji">🍛</span>
+        <span class="logo-text">Warteg<span class="accent">Tech</span></span>
+        <span class="logo-badge-halal">100% Bug-Free</span>
       </a>
       <nav class="nav-links" id="nav-links" aria-label="Navigasi utama">
-        <a href="#skills"     class="nav-link" id="nav-skills">Skills</a>
-        <a href="#projects"   class="nav-link" id="nav-projects">Proyek</a>
-        <a href="#experience" class="nav-link" id="nav-experience">Pengalaman</a>
+        <a href="#etalase"    class="nav-link" id="nav-skills">Etalase Lauk</a>
+        <a href="#projects"   class="nav-link" id="nav-projects">Paket Ramesan</a>
+        <a href="#experience" class="nav-link" id="nav-experience">Nota Bon</a>
+        <a href="#contact"    class="nav-link nav-link--cta" id="nav-contact">Bungkus Proyek</a>
       </nav>
       <button class="nav-hamburger" id="nav-hamburger" aria-label="Buka menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -87,220 +96,232 @@
     </div>
   </header>
 
-  <!-- ═══════════════════════════ HERO ═══════════════════════════ -->
-  <section class="hero" id="hero">
+  <!-- ═══════════════════════════ HERO: KOKI WEB FULLSTACK ═══════════════════════════ -->
+  <section class="hero warteg-hero" id="hero">
     <div class="hero-bg" aria-hidden="true">
+      <div class="warteg-tile-bg"></div>
       <div class="orb orb--1"></div>
       <div class="orb orb--2"></div>
-      <div class="orb orb--3"></div>
-      <div class="grid-lines"></div>
     </div>
 
     <div class="hero-inner">
       <div class="hero-text" id="hero-text">
+        <div class="hero-spanduk-badge">
+          <span class="badge-icon">👨‍🍳</span>
+          <span>Koki Web &amp; Automation Engineer</span>
+          <span class="badge-pulse">● Buka 24 Jam</span>
+        </div>
+
         <h1 class="hero-title" id="hero-title">
-          Halo, Saya <br />
-          <span class="hero-name" id="hero-name">M.Sirojul Munir</span>
+          Nasi Rames Fullstack, <br />
+          <span class="hero-name-warteg" id="hero-name">Kodingan Gurih &amp; Renyah!</span>
         </h1>
+
         <p class="hero-role" id="hero-role">
           <span class="typed-text" id="typed-text"></span><span class="cursor" id="cursor">|</span>
         </p>
+
         <p class="hero-desc" id="hero-desc">
-          Dengan latar belakang di video editing, animasi 2D/3D, dan pengembangan konten visual, 
-          saya kini fokus membangun aplikasi web dan mobile modern menggunakan Laravel, React, dan Flutter — 
-          serta mengotomatisasi workflow bisnis dengan teknologi terkini.
+          Selamat datang di <strong>Warteg Tech M. Sirojul Munir</strong>! Dengan pengalaman 7+ tahun di industri digital, 
+          saya meracik aplikasi web modern (Laravel, React), aplikasi mobile (Flutter), dan otomasi workflow bisnis 
+          dengan bumbu teknologi terkini — siap saji, porsi pas, dan tanpa micin error!
         </p>
+
         <div class="hero-actions" id="hero-actions">
-          <a href="#projects" class="btn btn--primary" id="btn-see-projects">
-            <span>Lihat Proyek</span>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z" clip-rule="evenodd" /></svg>
+          <a href="#etalase" class="btn btn--warteg-primary" id="btn-see-projects">
+            <span>Lihat Etalase Lauk</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="18" height="18"><path fill-rule="evenodd" d="M10 2a8 8 0 1 0 0 16 8 8 0 0 0 0-16Zm-.75 4.75a.75.75 0 0 1 1.5 0v4.19l2.72 2.72a.75.75 0 1 1-1.06 1.06l-3-3a.75.75 0 0 1-.22-.53V6.75Z" clip-rule="evenodd" /></svg>
           </a>
-          <a href="https://wa.me/6285706013038" target="_blank" rel="noopener noreferrer" class="btn btn--ghost" id="btn-contact-hero">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-            <span>Hubungi Saya</span>
+          <a href="https://wa.me/6285706013038?text=Halo%20Mas%20Sirojul,%20saya%20tertarik%20mau%20konsultasi%20atau%20bungkus%20proyek%20di%20Warteg%20Tech!" target="_blank" rel="noopener noreferrer" class="btn btn--warteg-ghost" id="btn-contact-hero">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            <span>Bungkus Proyek (WA)</span>
           </a>
-        </div>
-        <!-- Hero Quick Stats / Metrics -->
-        <div class="hero-stats" id="hero-stats">
-          <div class="hero-stat-card">
-            <span class="hero-stat-number">7+</span>
-            <span class="hero-stat-label">Tahun Pengalaman Kerja</span>
-          </div>
-          <div class="hero-stat-card">
-            <span class="hero-stat-number">6+</span>
-            <span class="hero-stat-label">Proyek &amp; Sistem Selesai</span>
-          </div>
-          <div class="hero-stat-card">
-            <span class="hero-stat-number">3+</span>
-            <span class="hero-stat-label">Industri F&B, E-Commerce, IT</span>
-          </div>
         </div>
 
-        <div class="hero-socials" id="hero-socials">
-          <a href="https://github.com/muhsirojulmunir" target="_blank" rel="noopener noreferrer" class="social-link" id="social-github" aria-label="GitHub">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2Z"/></svg>
-          </a>
-          <a href="https://instagram.com/muhsairojulmunir" target="_blank" rel="noopener noreferrer" class="social-link" id="social-instagram" aria-label="Instagram">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069ZM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0Zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324ZM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8Zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881Z"/></svg>
-          </a>
-          <a href="mailto:munirxanm40@gmail.com" class="social-link" id="social-email" aria-label="Email">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z"/><path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z"/></svg>
-          </a>
+        <!-- Hero Warteg Quick Stats -->
+        <div class="hero-stats warteg-stats" id="hero-stats">
+          <div class="hero-stat-card warteg-stat-card">
+            <span class="hero-stat-number">7+ Th</span>
+            <span class="hero-stat-label">Pengalaman Meracik Web</span>
+          </div>
+          <div class="hero-stat-card warteg-stat-card">
+            <span class="hero-stat-number">6+</span>
+            <span class="hero-stat-label">Sistem Besar Tersaji</span>
+          </div>
+          <div class="hero-stat-card warteg-stat-card">
+            <span class="hero-stat-number">100%</span>
+            <span class="hero-stat-label">Kepuasan Pelanggan</span>
+          </div>
         </div>
       </div>
 
+      <!-- Hero Photo Card with Warteg Showcase Frame -->
       <div class="hero-photo-wrap" id="hero-photo-wrap">
-        <!-- Modern Tech Glass Card Frame -->
-        <div class="tech-profile-card" id="tech-profile-card">
-          <!-- Ambient Glow Backdrop -->
+        <div class="tech-profile-card warteg-profile-card" id="tech-profile-card">
           <div class="card-ambient-glow" aria-hidden="true"></div>
 
-          <!-- Card Header Bar -->
-          <div class="card-glass-header" aria-hidden="true">
+          <div class="card-glass-header warteg-card-header" aria-hidden="true">
             <div class="card-traffic-lights">
               <span class="t-dot dot-red"></span>
               <span class="t-dot dot-yellow"></span>
               <span class="t-dot dot-green"></span>
             </div>
-            <span class="card-code-tag">developer.profile</span>
+            <span class="card-code-tag">koki-sirojul.dev</span>
           </div>
 
-          <!-- Photo Container -->
-          <div class="card-photo-container">
-            <div class="card-photo-backdrop" aria-hidden="true"></div>
-            <img
-              src="assets/munir.png"
-              alt="Foto profil profesional M.Sirojul Munir"
-              class="hero-photo"
-              id="hero-photo"
-            />
+          <div class="hero-photo-container">
+            <img src="assets/munir.png" alt="M. Sirojul Munir - Koki Web Developer" class="hero-photo" width="480" height="560" loading="eager" />
           </div>
 
-          <!-- Card Footer Details -->
-          <div class="card-glass-footer">
-            <div class="footer-profile-info">
-              <h3 class="footer-name">M. Sirojul Munir</h3>
+          <div class="card-glass-footer warteg-card-footer">
+            <div>
+              <p class="footer-name">M. Sirojul Munir</p>
+              <p class="footer-role">Head Chef • Fullstack &amp; Automation</p>
             </div>
-            <div class="footer-tech-stack">
-              <span>Laravel</span>
-              <span>React</span>
-              <span>Flutter</span>
-            </div>
+            <span class="warteg-status-pill">Siap Melayani</span>
           </div>
-        </div>
-
-        <!-- Floating Interactive Emoticon Badges -->
-        <div class="tech-badge tech-badge--top" id="tb-code" title="Web & Mobile Developer">
-          <span class="emoji-icon">💻</span>
         </div>
       </div>
-    </div>
-
-    <div class="scroll-indicator" id="scroll-indicator" aria-hidden="true">
-      <div class="scroll-line"></div>
-      <span>Scroll</span>
     </div>
   </section>
 
-  <!-- ═══════════════════════════ SKILLS ═══════════════════════════ -->
-  <section class="section skills-section" id="skills">
+  <!-- ═══════════════════════════ ETALASE KACA: PILIH LAUK SENDIRI ═══════════════════════════ -->
+  <section class="section warteg-section" id="etalase">
     <div class="container">
-      <div class="section-header reveal" id="skills-header">
-        <span class="section-label">Kemampuan</span>
-        <h2 class="section-title">Skills <span class="accent">&</span> Tools</h2>
-        <p class="section-desc">Teknologi dan alat yang saya kuasai dari pengalaman kerja nyata di berbagai industri.</p>
+      <div class="section-header">
+        <span class="section-label warteg-badge">🍱 ETALASE LAUK &amp; TECH STACK</span>
+        <h2 class="section-title">Pilih Menu Lauk Sesuai Selera</h2>
+        <p class="section-desc">
+          Klik lauk di bawah untuk meracik paket proyek impian Anda ke dalam <strong>Piring Pesanan</strong>. 
+          Setelah selesai, Anda bisa langsung membungkusnya ke WhatsApp!
+        </p>
       </div>
 
-      <div class="skill-categories" id="skill-categories">
-
-        <!-- Web Development -->
-        <div class="skill-cat-card reveal" id="skillcat-web">
-          <div class="skill-cat-header">
-            <div class="skill-cat-icon" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M14.447 3.026a.75.75 0 0 1 .527.921l-4.5 16.5a.75.75 0 0 1-1.448-.394l4.5-16.5a.75.75 0 0 1 .921-.527ZM16.72 6.22a.75.75 0 0 1 1.06 0l5.25 5.25a.75.75 0 0 1 0 1.06l-5.25 5.25a.75.75 0 1 1-1.06-1.06L21.44 12l-4.72-4.72a.75.75 0 0 1 0-1.06Zm-9.44 0a.75.75 0 0 1 0 1.06L2.56 12l4.72 4.72a.75.75 0 1 1-1.06 1.06L.97 12.53a.75.75 0 0 1 0-1.06l5.25-5.25a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd"/></svg>
-            </div>
-            <h3 class="skill-cat-name">Web Development</h3>
-          </div>
-          <div class="skill-tag-grid">
-            <span class="skill-tag skill-tag--primary" id="st-laravel">Laravel</span>
-            <span class="skill-tag skill-tag--primary" id="st-php">PHP</span>
-            <span class="skill-tag skill-tag--primary" id="st-react">React</span>
-            <span class="skill-tag skill-tag--primary" id="st-react">Tailwinds CSS</span>
-            <span class="skill-tag" id="st-restapi">REST API</span>
-            <span class="skill-tag" id="st-html">HTML</span>
-            <span class="skill-tag" id="st-css">CSS</span>
-            <span class="skill-tag" id="st-js">JavaScript</span>
-            <span class="skill-tag" id="st-bootstrap">Bootstrap</span>
-          </div>
+      <!-- The Glass Food Showcase -->
+      <div class="etalase-showcase">
+        <div class="etalase-roof">
+          <div class="etalase-lamp lamp--1"></div>
+          <div class="etalase-lamp lamp--2"></div>
+          <span class="etalase-roof-tag">ETALASE KACA • LAUK SEGAR SETIAP HARI</span>
         </div>
 
-        <!-- Mobile & App -->
-        <div class="skill-cat-card reveal" id="skillcat-mobile">
-          <div class="skill-cat-header">
-            <div class="skill-cat-icon" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M10.5 18.75a.75.75 0 0 0 0 1.5h3a.75.75 0 0 0 0-1.5h-3Z"/><path fill-rule="evenodd" d="M8.625.75A3.375 3.375 0 0 0 5.25 4.125v15.75a3.375 3.375 0 0 0 3.375 3.375h6.75a3.375 3.375 0 0 0 3.375-3.375V4.125A3.375 3.375 0 0 0 15.375.75h-6.75ZM7.5 4.125C7.5 3.504 8.004 3 8.625 3H9.75v.375c0 .621.504 1.125 1.125 1.125h2.25c.621 0 1.125-.504 1.125-1.125V3h1.125c.621 0 1.125.504 1.125 1.125v15.75c0 .621-.504 1.125-1.125 1.125h-6.75A1.125 1.125 0 0 1 7.5 19.875V4.125Z" clip-rule="evenodd"/></svg>
+        <div class="dish-grid" id="dish-grid">
+          <!-- Dish 1: Telor Dadar Krispi (Laravel) -->
+          <div class="dish-card" data-id="telor" data-name="Telor Dadar Krispi (Laravel Backend)" data-cat="Backend">
+            <div class="dish-badge">Menu Favorit</div>
+            <div class="dish-icon-wrap">
+              <span class="dish-emoji">🍳</span>
             </div>
-            <h3 class="skill-cat-name">Mobile Development</h3>
+            <h3 class="dish-title">Telor Dadar Krispi</h3>
+            <p class="dish-tech">Laravel 11 • PHP 8.3 • MySQL</p>
+            <p class="dish-desc">Fondasi tebal, gurih, dan mengenyangkan. Arsitektur backend kokoh, database relasional bersih, dan performa tinggi.</p>
+            <div class="dish-footer">
+              <span class="dish-price">Lauk Utama</span>
+              <button class="btn-add-dish" aria-label="Tambah Telor Dadar ke Piring">
+                <span class="add-icon">+</span> Tambah
+              </button>
+            </div>
           </div>
-          <div class="skill-tag-grid">
-            <span class="skill-tag skill-tag--primary" id="st-flutter">Flutter</span>
-            <span class="skill-tag skill-tag--primary" id="st-dart">Dart</span>
-            <span class="skill-tag skill-tag--primary" id="st-mob-restapi">REST API</span>
-            <span class="skill-tag" id="st-mob-googleai">Google AI Studio</span>
-            <span class="skill-tag" id="st-admindash">Admin Dashboard</span>
+
+          <!-- Dish 2: Ikan Tongkol Balado (React) -->
+          <div class="dish-card" data-id="ikan" data-name="Ikan Tongkol Balado (React Frontend)" data-cat="Frontend">
+            <div class="dish-badge dish-badge--pedas">Pedas Segar</div>
+            <div class="dish-icon-wrap">
+              <span class="dish-emoji">🐟</span>
+            </div>
+            <h3 class="dish-title">Ikan Tongkol Balado</h3>
+            <p class="dish-tech">React.js • Tailwind CSS • Vite</p>
+            <p class="dish-desc">Tampilan antarmuka yang renyah, interaktif, responsif kilat, dan memanjakan mata di semua ukuran layar.</p>
+            <div class="dish-footer">
+              <span class="dish-price">Lauk Utama</span>
+              <button class="btn-add-dish" aria-label="Tambah Ikan Tongkol ke Piring">
+                <span class="add-icon">+</span> Tambah
+              </button>
+            </div>
+          </div>
+
+          <!-- Dish 3: Orek Tempe Manis (Flutter) -->
+          <div class="dish-card" data-id="tempe" data-name="Orek Tempe Manis (Flutter Mobile)" data-cat="Mobile">
+            <div class="dish-badge">Serbaguna</div>
+            <div class="dish-icon-wrap">
+              <span class="dish-emoji">🥢</span>
+            </div>
+            <h3 class="dish-title">Orek Tempe Manis</h3>
+            <p class="dish-tech">Flutter • Dart • Cross Platform</p>
+            <p class="dish-desc">Pelengkap wajib yang cocok untuk semua: satu basis kode jalan mulus di Android dan iOS tanpa ribet.</p>
+            <div class="dish-footer">
+              <span class="dish-price">Lauk Wajib</span>
+              <button class="btn-add-dish" aria-label="Tambah Orek Tempe ke Piring">
+                <span class="add-icon">+</span> Tambah
+              </button>
+            </div>
+          </div>
+
+          <!-- Dish 4: Ayam Lengkuas (Fullstack API) -->
+          <div class="dish-card" data-id="ayam" data-name="Ayam Goreng Lengkuas (Fullstack API)" data-cat="Fullstack">
+            <div class="dish-badge">Paling Komplit</div>
+            <div class="dish-icon-wrap">
+              <span class="dish-emoji">🍗</span>
+            </div>
+            <h3 class="dish-title">Ayam Goreng Lengkuas</h3>
+            <p class="dish-tech">RESTful API • Auth JWT • Microservices</p>
+            <p class="dish-desc">Daging utama untuk sistem besar enterprise: integrasi payment gateway, webhook, dan arsitektur data aman.</p>
+            <div class="dish-footer">
+              <span class="dish-price">Lauk Spesial</span>
+              <button class="btn-add-dish" aria-label="Tambah Ayam Lengkuas ke Piring">
+                <span class="add-icon">+</span> Tambah
+              </button>
+            </div>
+          </div>
+
+          <!-- Dish 5: Sayur Asem Segar (UI/UX) -->
+          <div class="dish-card" data-id="sayur" data-name="Sayur Asem Segar (UI/UX & Video Editing)" data-cat="Design">
+            <div class="dish-badge">Penyegar</div>
+            <div class="dish-icon-wrap">
+              <span class="dish-emoji">🥣</span>
+            </div>
+            <h3 class="dish-title">Sayur Asem Segar</h3>
+            <p class="dish-tech">Figma • Motion Graphic • Premiere Pro</p>
+            <p class="dish-desc">Memberikan kesegaran visual dengan desain UX intuitif, tipografi harmonis, dan konten multimedia memikat.</p>
+            <div class="dish-footer">
+              <span class="dish-price">Sayur Segar</span>
+              <button class="btn-add-dish" aria-label="Tambah Sayur Asem ke Piring">
+                <span class="add-icon">+</span> Tambah
+              </button>
+            </div>
+          </div>
+
+          <!-- Dish 6: Es Teh Manis Jumbo (Automation) -->
+          <div class="dish-card" data-id="esteh" data-name="Es Teh Manis Jumbo (Workflow Automation)" data-cat="Automation">
+            <div class="dish-badge dish-badge--dingin">Pelepas Dahaga</div>
+            <div class="dish-icon-wrap">
+              <span class="dish-emoji">🍹</span>
+            </div>
+            <h3 class="dish-title">Es Teh Manis Jumbo</h3>
+            <p class="dish-tech">n8n • Python • WhatsApp Automation</p>
+            <p class="dish-desc">Menghilangkan dahaga pekerjaan manual berulang: bot otomatis, sinkronisasi data antar platform, dan auto-reporting.</p>
+            <div class="dish-footer">
+              <span class="dish-price">Minuman Wajib</span>
+              <button class="btn-add-dish" aria-label="Tambah Es Teh Manis ke Piring">
+                <span class="add-icon">+</span> Tambah
+              </button>
+            </div>
           </div>
         </div>
-
-        <!-- Automation & AI -->
-        <div class="skill-cat-card reveal" id="skillcat-auto">
-          <div class="skill-cat-header">
-            <div class="skill-cat-icon" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M14.615 1.595a.75.75 0 0 1 .359.852L12.982 9.75h7.268a.75.75 0 0 1 .548 1.262l-10.5 11.25a.75.75 0 0 1-1.272-.71l1.992-7.302H3.75a.75.75 0 0 1-.548-1.262l10.5-11.25a.75.75 0 0 1 .913-.143Z" clip-rule="evenodd"/></svg>
-            </div>
-            <h3 class="skill-cat-name">Automation & AI</h3>
-          </div>
-          <div class="skill-tag-grid">
-            <span class="skill-tag skill-tag--primary" id="st-n8n">n8n</span>
-            <span class="skill-tag skill-tag--primary" id="st-whatsapp">WhatsApp API</span>
-            <span class="skill-tag" id="st-airtable">Airtable / Goggle Sheets</span>
-            <span class="skill-tag" id="st-metaads">Meta Ads</span>
-            <span class="skill-tag" id="st-gemini">Google AI Studio</span>
-            <span class="skill-tag" id="st-claude">Claude AI</span>
-          </div>
-        </div>
-
-        <!-- Design & Content (Tengah Bawah) -->
-        <div class="skill-cat-card skill-cat-card--center reveal" id="skillcat-design">
-          <div class="skill-cat-header">
-            <div class="skill-cat-icon" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M20.599 1.5c-.376 0-.743.111-1.055.32l-5.08 3.385a18.747 18.747 0 0 0-3.471 2.987 10.04 10.04 0 0 1 4.815 4.815 18.748 18.748 0 0 0 2.987-3.472l3.386-5.079A1.902 1.902 0 0 0 20.599 1.5Zm-8.3 14.025a18.76 18.76 0 0 0 1.896-1.207 8.026 8.026 0 0 0-4.513-4.513A18.75 18.75 0 0 0 8.475 11.7l-.278.5a5.26 5.26 0 0 1 3.601 3.602l.502-.278ZM6.75 13.5A3.75 3.75 0 0 0 3 17.25a1.5 1.5 0 0 1-1.601 1.497.75.75 0 0 0-.7 1.143 5.25 5.25 0 0 0 9.8-2.62 3.75 3.75 0 0 0-3.75-3.75Z" clip-rule="evenodd"/></svg>
-            </div>
-            <h3 class="skill-cat-name">Design &amp; Content</h3>
-          </div>
-          <div class="skill-tag-grid">
-            <span class="skill-tag skill-tag--primary" id="st-capcut">CapCut</span>
-            <span class="skill-tag skill-tag--primary" id="st-canva">Canva</span>
-            <span class="skill-tag" id="st-ai">Adobe Illustrator</span>
-            <span class="skill-tag" id="st-copywriting">Copywriting</span>
-            <span class="skill-tag" id="st-digmark">Digital Marketing</span>
-            <span class="skill-tag" id="st-ecom">E-Commerce</span>
-          </div>
-        </div>
-
       </div>
 
-      <!-- Soft Skills with Percentage -->
+      <!-- Soft Skills (Bumbu Dapur Profesional) -->
       <div class="soft-skills-wrap reveal" id="soft-skills-wrap">
         <div class="soft-skills-header">
-          <h3 class="soft-skills-title">Soft Skills &amp; Kompetensi Interpersonal</h3>
-          <span class="soft-skills-badge">Evaluasi Profesional</span>
+          <h3 class="soft-skills-title">Bumbu Rahasia &amp; Karakter Kerja</h3>
+          <span class="soft-skills-badge warteg-badge-soft">Racikan Teruji</span>
         </div>
         <div class="soft-skills-grid" id="soft-skills-grid">
           <div class="soft-skill-item" id="ss-team">
             <div class="soft-skill-top">
               <div class="soft-skill-label">
                 <span class="soft-skill-icon">👥</span>
-                <span class="soft-skill-name">Kerja Tim</span>
+                <span class="soft-skill-name">Kerja Tim Solid</span>
               </div>
               <span class="soft-skill-pct">95%</span>
             </div>
@@ -313,7 +334,7 @@
             <div class="soft-skill-top">
               <div class="soft-skill-label">
                 <span class="soft-skill-icon">💪</span>
-                <span class="soft-skill-name">Pekerja Keras</span>
+                <span class="soft-skill-name">Pekerja Keras &amp; Ulet</span>
               </div>
               <span class="soft-skill-pct">96%</span>
             </div>
@@ -326,7 +347,7 @@
             <div class="soft-skill-top">
               <div class="soft-skill-label">
                 <span class="soft-skill-icon">⚡</span>
-                <span class="soft-skill-name">Cekatan &amp; Adaptif</span>
+                <span class="soft-skill-name">Cekatan &amp; Cepat Tanggap</span>
               </div>
               <span class="soft-skill-pct">94%</span>
             </div>
@@ -339,7 +360,7 @@
             <div class="soft-skill-top">
               <div class="soft-skill-label">
                 <span class="soft-skill-icon">✅</span>
-                <span class="soft-skill-name">Bertanggung Jawab</span>
+                <span class="soft-skill-name">Amanah &amp; Tanggung Jawab</span>
               </div>
               <span class="soft-skill-pct">98%</span>
             </div>
@@ -347,19 +368,39 @@
               <div class="soft-skill-bar-fill" style="width: 98%;"></div>
             </div>
           </div>
-
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════════════════ PROJECTS ═══════════════════════════ -->
-  <section class="section projects-section" id="projects">
+  <!-- Floating Virtual Plate (Piring Pesanan) Drawer -->
+  <div class="floating-plate-bar" id="floating-plate-bar">
+    <div class="plate-bar-inner">
+      <div class="plate-bar-icon">
+        <span class="plate-emoji">🍽️</span>
+        <span class="plate-count-badge" id="plate-count-badge">0</span>
+      </div>
+      <div class="plate-bar-info">
+        <p class="plate-bar-title">Piring Pesanan Proyek Anda</p>
+        <p class="plate-bar-items" id="plate-bar-items">Klik lauk di etalase untuk meracik paket</p>
+      </div>
+      <div class="plate-bar-actions">
+        <button class="btn-reset-plate" id="btn-reset-plate" title="Kosongkan Piring">Kosongkan</button>
+        <a href="#" class="btn btn--warteg-order" id="btn-order-wa" target="_blank" rel="noopener noreferrer">
+          <span>Bungkus Pesanan</span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="16" height="16"><path fill-rule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z" clip-rule="evenodd" /></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════ PROJECTS: PAKET RAMESAN PROYEK ═══════════════════════════ -->
+  <section class="section projects-section warteg-section" id="projects">
     <div class="container">
       <div class="section-header reveal" id="projects-header">
-        <span class="section-label">Portofolio</span>
-        <h2 class="section-title">Proyek <span class="accent">Terbaik</span></h2>
-        <p class="section-desc">Proyek nyata yang pernah saya bangun dan kerjakan secara profesional.</p>
+        <span class="section-label warteg-badge">🍱 MENU SPESIAL RAMESAN</span>
+        <h2 class="section-title">Paket Ramesan <span class="accent">Proyek Nyata</span></h2>
+        <p class="section-desc">Sajian sistem dan aplikasi profesional berskala besar yang diracik langsung untuk kebutuhan klien &amp; perusahaan.</p>
       </div>
 
       <div class="projects-grid" id="projects-grid">
@@ -636,117 +677,125 @@
     </div>
   </section>
 
-  <!-- ═══════════════════════════ EXPERIENCE ═══════════════════════════ -->
-  <section class="section experience-section" id="experience">
+  <!-- ═══════════════════════════ NOTA BON KASIR (PENGALAMAN KERJA) ═══════════════════════════ -->
+  <section class="section experience-section warteg-section" id="experience">
     <div class="container">
       <div class="section-header reveal" id="experience-header">
-        <span class="section-label">Perjalanan</span>
-        <h2 class="section-title">Pengalaman <span class="accent">Kerja</span></h2>
-        <p class="section-desc">Jejak profesional saya dari dunia retail & content hingga pengembangan software.</p>
+        <span class="section-label warteg-badge">🧾 STRUK &amp; NOTA BON</span>
+        <h2 class="section-title">Riwayat Jam Terbang</h2>
+        <p class="section-desc">Bukti nyata hasil racikan dan rekam jejak kerja profesional selama lebih dari 7 tahun.</p>
       </div>
 
-      <div class="timeline" id="timeline">
+      <div class="receipt-container reveal">
+        <div class="receipt-paper">
+          <div class="receipt-zigzag-top" aria-hidden="true"></div>
 
-        <!-- Exp 1: PT Jaya Mandiri -->
-        <div class="timeline-item reveal" id="exp-1">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card" id="exp-card-1">
-            <div class="timeline-meta">
-              <span class="timeline-date" id="exp-1-date">Apr 2025 — Sep 2026</span>
-              <span class="timeline-badge timeline-badge--current">Terbaru</span>
+          <div class="receipt-header">
+            <h3 class="receipt-brand">WARTEG TECH SIROJUL</h3>
+            <p class="receipt-address">Jl. Server Production No. 101 • Cloud Hosting</p>
+            <p class="receipt-meta">STRUK NO: #DEV-2026 • KASIR: M. SIROJUL MUNIR</p>
+            <div class="receipt-divider-dashed"></div>
+          </div>
+
+          <div class="receipt-table">
+            <div class="receipt-row receipt-row--head">
+              <span>JAM TERBANG / PERAN</span>
+              <span>STATUS</span>
             </div>
-            <h3 class="timeline-role" id="exp-1-role">Web Developer & Automation Engineer</h3>
-            <p class="timeline-company" id="exp-1-company">PT Jaya Mandiri (Record)</p>
-            <ul class="timeline-list" id="exp-1-list">
-              <li>Mengembangkan dan memelihara website E-Commerce, sistem absensi, dan landing page menggunakan Laravel, PHP, React, dan REST API</li>
-              <li>Merancang workflow automation dengan n8n serta mengintegrasikan WhatsApp, Airtable/Goggle Sheets, Meta Ads, dan Claude AI</li>
-              <li>Mengembangkan dan mengoptimalkan fitur aplikasi sesuai kebutuhan bisnis dan alur kerja perusahaan</li>
-              <li>Mendesain banner promosi untuk Shopee dan media sosial</li>
-              <li>Mengelola dan mengoptimalkan stok produk di Shopee</li>
-            </ul>
-            <div class="timeline-tags">
-              <span class="tl-tag">Laravel</span>
-              <span class="tl-tag">React</span>
-              <span class="tl-tag">PHP</span>
-              <span class="tl-tag">n8n</span>
-              <span class="tl-tag">Claude AI</span>
-              <span class="tl-tag">WhatsApp API</span>
+            <div class="receipt-divider-dashed"></div>
+
+            <div class="receipt-row">
+              <div class="receipt-col-main">
+                <strong class="receipt-role-title">Web Developer &amp; Automation Engineer</strong>
+                <span class="receipt-place">PT Jaya Mandiri (Record)</span>
+                <p class="receipt-desc-text">Mengembangkan website E-Commerce, sistem absensi GPS, dan otomasi n8n + AI.</p>
+                <small class="receipt-date">Apr 2025 — Sep 2026</small>
+              </div>
+              <span class="receipt-badge-status">AKTIF</span>
+            </div>
+
+            <div class="receipt-row">
+              <div class="receipt-col-main">
+                <strong class="receipt-role-title">Content Creator &amp; Digital Marketing</strong>
+                <span class="receipt-place">PT Global Indo Inovatif (Honey Boo)</span>
+                <p class="receipt-desc-text">Produksi konten visual, copywriting, dan strategi digital marketing terukur.</p>
+                <small class="receipt-date">Des 2022 — Apr 2025</small>
+              </div>
+              <span class="receipt-badge-status">SUKSES</span>
+            </div>
+
+            <div class="receipt-row">
+              <div class="receipt-col-main">
+                <strong class="receipt-role-title">Sales &amp; Customer Service</strong>
+                <span class="receipt-place">PT World Innovative Telecommunications (OPPO)</span>
+                <p class="receipt-desc-text">Komunikasi profesional, kepuasan pelanggan, dan kerja sama tim solid.</p>
+                <small class="receipt-date">Mei 2019 — Agt 2022</small>
+              </div>
+              <span class="receipt-badge-status">TERUJI</span>
+            </div>
+
+            <div class="receipt-divider-dashed"></div>
+
+            <div class="receipt-summary">
+              <div class="summary-line">
+                <span>TOTAL PENGALAMAN:</span>
+                <strong>7+ TAHUN</strong>
+              </div>
+              <div class="summary-line">
+                <span>TOTAL SISTEM BESAR:</span>
+                <strong>6+ APLIKASI</strong>
+              </div>
+              <div class="summary-line highlight">
+                <span>MUTU KUALITAS:</span>
+                <strong>100% BEBAS MICIN BUG</strong>
+              </div>
+            </div>
+
+            <div class="receipt-stamp-wrap">
+              <div class="receipt-stamp">
+                <span>LUNAS &amp; TERUJI</span>
+                <small>KUALITAS BINTANG 5</small>
+              </div>
+            </div>
+
+            <div class="receipt-footer-msg">
+              <p>*** TERIMA KASIH ATAS KUNJUNGAN ANDA ***</p>
+              <p>Kodingan Gurih, Bisnis Makin Berkah!</p>
             </div>
           </div>
-        </div>
 
-        <!-- Exp 2: PT Global Indo Inovatif -->
-        <div class="timeline-item reveal" id="exp-2">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card" id="exp-card-2">
-            <div class="timeline-meta">
-              <span class="timeline-date" id="exp-2-date">Des 2022 — Apr 2025</span>
-            </div>
-            <h3 class="timeline-role" id="exp-2-role">Content Creator & Digital Marketing</h3>
-            <p class="timeline-company" id="exp-2-company">PT Global Indo Inovatif (Honey Boo)</p>
-            <ul class="timeline-list" id="exp-2-list">
-              <li>Menguasai software editing CapCut, Canva, dan Adobe Illustrator untuk produksi konten visual</li>
-              <li>Memiliki kemampuan copywriting dan kreativitas konten yang kuat</li>
-              <li>Memahami digital marketing serta menyusun strategi konten yang efektif</li>
-              <li>Mampu mengidentifikasi target audiens dengan tepat</li>
-            </ul>
-            <div class="timeline-tags">
-              <span class="tl-tag">CapCut</span>
-              <span class="tl-tag">Canva</span>
-              <span class="tl-tag">Adobe Illustrator</span>
-              <span class="tl-tag">Copywriting</span>
-              <span class="tl-tag">Digital Marketing</span>
-            </div>
-          </div>
+          <div class="receipt-zigzag-bottom" aria-hidden="true"></div>
         </div>
-
-        <!-- Exp 3: OPPO -->
-        <div class="timeline-item reveal" id="exp-3">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card" id="exp-card-3">
-            <div class="timeline-meta">
-              <span class="timeline-date" id="exp-3-date">Mei 2019 — Agt 2022</span>
-            </div>
-            <h3 class="timeline-role" id="exp-3-role">Sales & Customer Service</h3>
-            <p class="timeline-company" id="exp-3-company">PT World Innovative Telecommunications (OPPO)</p>
-            <ul class="timeline-list" id="exp-3-list">
-              <li>Mampu berkomunikasi dengan baik dan profesional kepada pelanggan</li>
-              <li>Bekerja secara tim maupun individual dengan hasil yang optimal</li>
-              <li>Bertanggung jawab penuh terhadap hasil dan pekerjaan yang ditugaskan</li>
-              <li>Mengikuti perkembangan gadget terkini untuk memberikan informasi akurat ke pelanggan</li>
-            </ul>
-            <div class="timeline-tags">
-              <span class="tl-tag">Customer Service</span>
-              <span class="tl-tag">Komunikasi</span>
-              <span class="tl-tag">Teamwork</span>
-            </div>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
-  <footer class="footer" id="footer">
+  <!-- ═══════════════════════════ FOOTER WARTEG TECH ═══════════════════════════ -->
+  <footer class="footer warteg-footer" id="contact">
     <div class="container footer-inner">
       <div class="footer-left">
-        <a href="#hero" class="footer-brand">&lt;Sirojul /&gt;</a>
+        <a href="#hero" class="footer-brand warteg-footer-brand">
+          <span class="logo-emoji">🍛</span> Warteg<span class="accent">Tech</span>
+        </a>
+        <p class="footer-tagline">
+          Meracik solusi website, mobile, dan otomasi workflow dengan rasa bintang lima.
+        </p>
         <p class="footer-copy">
-          &copy; <span id="footer-year">2026</span> M. Sirojul Munir &bull; All Rights Reserved.
+          &copy; <span id="footer-year">2026</span> M. Sirojul Munir &bull; Koki Web Developer.
         </p>
       </div>
+
       <div class="footer-right">
         <div class="footer-contact-items">
-          <a href="https://wa.me/6285706013038" target="_blank" rel="noopener noreferrer" class="footer-contact-badge">
-            <span class="f-dot"></span> 0857-0601-3038 (WA)
+          <a href="https://wa.me/6285706013038?text=Halo%20Mas%20Sirojul,%20saya%20mau%20konsultasi%20atau%20bungkus%20proyek%20di%20Warteg%20Tech!" target="_blank" rel="noopener noreferrer" class="footer-contact-badge warteg-wa-badge">
+            <span class="f-dot"></span> Bungkus Proyek via WA: 0857-0601-3038
           </a>
           <a href="mailto:munirxanm40@gmail.com" class="footer-contact-badge">
             munirxanm40@gmail.com
           </a>
         </div>
         <div class="footer-social-links">
-          <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="footer-icon-link" aria-label="GitHub">GitHub</a>
+          <a href="https://github.com/muhsirojulmunir" target="_blank" rel="noopener noreferrer" class="footer-icon-link" aria-label="GitHub">GitHub</a>
           <a href="https://instagram.com/muhsairojulmunir" target="_blank" rel="noopener noreferrer" class="footer-icon-link" aria-label="Instagram">Instagram</a>
         </div>
       </div>
