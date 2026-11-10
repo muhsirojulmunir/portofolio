@@ -169,41 +169,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   --warteg-cream:       #FFFBEB;
 }
 
-/* ── WARTEG TOP SPANDUK BANNER ────────────────────────────────── */
-.warteg-top-banner {
-  background: linear-gradient(90deg, #0284C7 0%, #D97706 50%, #0284C7 100%);
-  color: #FFFFFF;
-  padding: 6px 16px;
-  font-family: var(--font-mono);
-  font-size: 0.74rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-align: center;
-  position: relative;
-  z-index: 1001;
-  border-bottom: 2px dashed rgba(255, 255, 255, 0.4);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-}
-
-.banner-inner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  max-width: var(--container-w);
-  margin: 0 auto;
-}
-
-.banner-star {
-  color: #FEF08A;
-  animation: starPulse 1.4s ease-in-out infinite alternate;
-}
-
-@keyframes starPulse {
-  0% { transform: scale(0.9); opacity: 0.7; }
-  100% { transform: scale(1.2); opacity: 1; }
-}
-
 /* ── INTRO PRELOADER: BUKA TIRAI WARTEG ───────────────────────── */
 .warteg-preloader {
   position: fixed;
