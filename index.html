@@ -15,52 +15,22 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- ═══════════════════════════ INTRO PRELOADER: BUKA TIRAI WARTEG TECH ═══════════════════════════ -->
-  <div class="preloader warteg-preloader" id="preloader" aria-hidden="false">
-    <!-- Left & Right Warteg Fabric Curtains -->
-    <div class="warteg-curtain warteg-curtain--left">
-      <div class="curtain-stripes"></div>
-      <div class="curtain-fringe"></div>
-    </div>
-    <div class="warteg-curtain warteg-curtain--right">
-      <div class="curtain-stripes"></div>
-      <div class="curtain-fringe"></div>
-    </div>
-
-    <!-- Steaming Plate & Cooking Progress Center Card -->
-    <div class="warteg-loader-card" id="warteg-loader-card">
-      <div class="loader-banner-tag">★ WARTEG TECH • SIROJUL MUNIR ★</div>
-
-      <!-- Steaming Porcelain Plate -->
-      <div class="steaming-plate-wrap">
-        <div class="steam-group" aria-hidden="true">
-          <span class="steam steam--1"></span>
-          <span class="steam steam--2"></span>
-          <span class="steam steam--3"></span>
+  <!-- ═══════════════════════════ CINEMATIC WARTEG INTRO SPLASH ═══════════════════════════ -->
+  <div class="warteg-intro-overlay" id="warteg-intro" aria-hidden="false">
+    <div class="warteg-intro-bg" id="warteg-intro-bg" style="background-image: url('assets/warteg-bg.jpg');"></div>
+    <div class="warteg-intro-overlay-shade"></div>
+    
+    <div class="warteg-intro-card" id="warteg-intro-card">
+      <div class="intro-koki-tag">★ WARTEG TECH • M. SIROJUL MUNIR ★</div>
+      <h2 class="intro-headline">Spesialis Web &amp; Otomasi Workflow</h2>
+      <p class="intro-sub">Kodingan Gurih, Porsi Pas &amp; Solusi Teruji</p>
+      
+      <div class="intro-mouse-guide">
+        <div class="mouse-icon" aria-hidden="true">
+          <div class="mouse-wheel"></div>
         </div>
-        <div class="plate-dish">
-          <div class="plate-rice">🍚</div>
-          <div class="plate-dish-icon plate-dish-icon--egg" title="Telor Balado">🍳</div>
-          <div class="plate-dish-icon plate-dish-icon--fish" title="Ikan Tongkol">🐟</div>
-          <div class="plate-dish-icon plate-dish-icon--tempeh" title="Orek Tempe">🥢</div>
-        </div>
+        <span class="guide-label">Gerakkan mouse untuk masuk</span>
       </div>
-
-      <h2 class="loader-title">Menyiapkan Pesanan Kodingan</h2>
-      <p class="loader-status" id="preloader-status">Menanak Nasi Pulen Fullstack...</p>
-
-      <!-- Golden Warm Progress Bar -->
-      <div class="loader-progress-box">
-        <div class="loader-progress-info">
-          <span class="loader-progress-label">Proses Masak</span>
-          <span class="loader-pct" id="preloader-pct">0%</span>
-        </div>
-        <div class="loader-bar-track">
-          <div class="loader-bar-fill" id="preloader-bar-fill"></div>
-        </div>
-      </div>
-
-      <span class="loader-skip-hint">Klik layar atau tekan [Esc] untuk langsung masuk</span>
     </div>
   </div>
 
@@ -200,8 +170,9 @@
           <!-- Dish 1: Telor Dadar Krispi (Laravel) -->
           <div class="dish-card" data-id="telor" data-name="Telor Dadar Krispi (Laravel Backend)" data-cat="Backend">
             <div class="dish-badge">Menu Favorit</div>
-            <div class="dish-icon-wrap">
-              <span class="dish-emoji">🍳</span>
+            <div class="dish-img-wrap">
+              <img src="assets/dish-telor.jpg" alt="Telor Dadar Krispi" class="dish-photo" loading="lazy" />
+              <div class="dish-icon-tag"><span class="dish-emoji">🍳</span></div>
             </div>
             <h3 class="dish-title">Telor Dadar Krispi</h3>
             <p class="dish-tech">Laravel 11 • PHP 8.3 • MySQL</p>
@@ -217,8 +188,9 @@
           <!-- Dish 2: Ikan Tongkol Balado (React) -->
           <div class="dish-card" data-id="ikan" data-name="Ikan Tongkol Balado (React Frontend)" data-cat="Frontend">
             <div class="dish-badge dish-badge--pedas">Pedas Segar</div>
-            <div class="dish-icon-wrap">
-              <span class="dish-emoji">🐟</span>
+            <div class="dish-img-wrap">
+              <img src="assets/dish-tongkol.jpg" alt="Ikan Tongkol Balado" class="dish-photo" loading="lazy" />
+              <div class="dish-icon-tag"><span class="dish-emoji">🐟</span></div>
             </div>
             <h3 class="dish-title">Ikan Tongkol Balado</h3>
             <p class="dish-tech">React.js • Tailwind CSS • Vite</p>
@@ -234,8 +206,9 @@
           <!-- Dish 3: Orek Tempe Manis (Flutter) -->
           <div class="dish-card" data-id="tempe" data-name="Orek Tempe Manis (Flutter Mobile)" data-cat="Mobile">
             <div class="dish-badge">Serbaguna</div>
-            <div class="dish-icon-wrap">
-              <span class="dish-emoji">🥢</span>
+            <div class="dish-img-wrap">
+              <img src="assets/dish-tempe.jpg" alt="Orek Tempe Manis" class="dish-photo" loading="lazy" />
+              <div class="dish-icon-tag"><span class="dish-emoji">🥢</span></div>
             </div>
             <h3 class="dish-title">Orek Tempe Manis</h3>
             <p class="dish-tech">Flutter • Dart • Cross Platform</p>
@@ -251,8 +224,9 @@
           <!-- Dish 4: Ayam Lengkuas (Fullstack API) -->
           <div class="dish-card" data-id="ayam" data-name="Ayam Goreng Lengkuas (Fullstack API)" data-cat="Fullstack">
             <div class="dish-badge">Paling Komplit</div>
-            <div class="dish-icon-wrap">
-              <span class="dish-emoji">🍗</span>
+            <div class="dish-img-wrap">
+              <img src="assets/dish-ayam.jpg" alt="Ayam Goreng Lengkuas" class="dish-photo" loading="lazy" />
+              <div class="dish-icon-tag"><span class="dish-emoji">🍗</span></div>
             </div>
             <h3 class="dish-title">Ayam Goreng Lengkuas</h3>
             <p class="dish-tech">RESTful API • Auth JWT • Microservices</p>

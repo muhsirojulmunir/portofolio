@@ -5,88 +5,76 @@
 'use strict';
 
 // ═══════════════════════════════════════════════════════════════
-// 1. WARTEG TECH INTRO PRELOADER: Buka Tirai Warteg
+// 1. CINEMATIC WARTEG INTRO: Mouse-Move Smooth Zoom-In & Fade
 // ═══════════════════════════════════════════════════════════════
 (() => {
-  const preloaderEl = document.getElementById('preloader');
-  const cardEl = document.getElementById('warteg-loader-card');
-  const statusEl = document.getElementById('preloader-status');
-  const pctEl = document.getElementById('preloader-pct');
-  const fillEl = document.getElementById('preloader-bar-fill');
+  const introEl = document.getElementById('warteg-intro');
+  const heroEl = document.getElementById('hero');
 
-  if (!preloaderEl) return;
+  if (!introEl) return;
 
-  // Lock scrolling during intro
+  // Lock scrolling during splash
   document.body.style.overflow = 'hidden';
 
-  let isFinished = false;
-  let progress = 0;
-  let progressInterval = null;
+  let hasEntered = false;
+  let mouseStartX = null;
+  let mouseStartY = null;
 
-  const exitPreloader = () => {
-    if (isFinished) return;
-    isFinished = true;
+  const triggerEntrance = () => {
+    if (hasEntered) return;
+    hasEntered = true;
 
-    if (progressInterval) clearInterval(progressInterval);
-    if (pctEl) pctEl.textContent = '100%';
-    if (fillEl) fillEl.style.width = '100%';
-    if (statusEl) {
-      statusEl.textContent = '✓ Siap Disajikan! Silakan Masuk, Bos!';
-      statusEl.style.color = '#F59E0B';
+    // Remove event listeners so it only triggers once
+    window.removeEventListener('mousemove', onMouseMove);
+    window.removeEventListener('wheel', triggerEntrance);
+    window.removeEventListener('click', triggerEntrance);
+    window.removeEventListener('touchstart', triggerEntrance);
+    window.removeEventListener('touchmove', triggerEntrance);
+    window.removeEventListener('keydown', triggerEntrance);
+
+    // 1. Trigger Warteg background zoom-in & fade out
+    introEl.classList.add('zooming');
+
+    // 2. Trigger web portfolio zoom-in to intro / hero
+    if (heroEl) {
+      heroEl.classList.add('site-entering-zoom');
     }
 
-    // Brief hold at 100% then split curtains open
+    // 3. Once animation finishes (~1.3s), remove overlay and restore scrolling
     setTimeout(() => {
-      preloaderEl.classList.add('preloader--done');
-
-      setTimeout(() => {
-        preloaderEl.style.display = 'none';
-        document.body.style.overflow = '';
-        window.dispatchEvent(new CustomEvent('preloaderFinished'));
-      }, 750);
-    }, 280);
+      introEl.style.display = 'none';
+      document.body.style.overflow = '';
+      if (heroEl) {
+        heroEl.classList.remove('site-entering-zoom');
+        heroEl.style.transform = '';
+        heroEl.style.filter = '';
+      }
+      window.dispatchEvent(new CustomEvent('wartegIntroFinished'));
+    }, 1300);
   };
 
-  // Cooking progress sequence: 0% -> 100% in ~2.1 seconds
-  const totalDuration = 2100;
-  const stepTime = 25;
-  const stepIncrement = 100 / (totalDuration / stepTime);
-
-  progressInterval = setInterval(() => {
-    progress += stepIncrement;
-    const currentPct = Math.min(100, Math.round(progress));
-
-    if (pctEl) pctEl.textContent = `${currentPct}%`;
-    if (fillEl) fillEl.style.width = `${currentPct}%`;
-
-    if (currentPct >= 28 && currentPct < 58) {
-      if (statusEl && statusEl.textContent !== 'Goreng Telor & Balado Ikan (Backend/Frontend)...') {
-        statusEl.textContent = 'Goreng Telor & Balado Ikan (Backend/Frontend)...';
-      }
-    } else if (currentPct >= 58 && currentPct < 85) {
-      if (statusEl && statusEl.textContent !== 'Meracik Bumbu Otomasi Workflow & AI...') {
-        statusEl.textContent = 'Meracik Bumbu Otomasi Workflow & AI...';
-      }
-    } else if (currentPct >= 85 && currentPct < 100) {
-      if (statusEl && statusEl.textContent !== 'Menata Piring Pesanan...') {
-        statusEl.textContent = 'Menata Piring Pesanan...';
-      }
+  function onMouseMove(e) {
+    if (mouseStartX === null || mouseStartY === null) {
+      mouseStartX = e.clientX;
+      mouseStartY = e.clientY;
+      return;
     }
-
-    if (progress >= 100) {
-      clearInterval(progressInterval);
-      exitPreloader();
+    // As soon as mouse moves >= 4 pixels, trigger cinematic zoom-in!
+    const dist = Math.hypot(e.clientX - mouseStartX, e.clientY - mouseStartY);
+    if (dist >= 4) {
+      triggerEntrance();
     }
-  }, stepTime);
+  }
 
-  // Fast forward on click or keypress
-  preloaderEl.addEventListener('click', exitPreloader);
-  window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' || e.key === 'Enter') exitPreloader();
-  }, { once: true });
+  window.addEventListener('mousemove', onMouseMove, { passive: true });
+  window.addEventListener('wheel', triggerEntrance, { passive: true });
+  window.addEventListener('click', triggerEntrance, { passive: true });
+  window.addEventListener('touchstart', triggerEntrance, { passive: true });
+  window.addEventListener('touchmove', triggerEntrance, { passive: true });
+  window.addEventListener('keydown', triggerEntrance, { passive: true });
 
-  // Absolute safety fallback (4s)
-  setTimeout(exitPreloader, 4000);
+  // Safety fallback after 5.5s
+  setTimeout(triggerEntrance, 5500);
 })();
 
 // ═══════════════════════════════════════════════════════════════

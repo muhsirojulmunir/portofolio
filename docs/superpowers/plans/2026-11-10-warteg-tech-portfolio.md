@@ -169,3 +169,4 @@
 - [ ] **Step 2: Git commit and push to main**
   - Stage all files, commit with clear message, push to GitHub.
   - Verify Vercel deployment status.
+
